@@ -1,0 +1,228 @@
+img{
+	display: block;
+	width:100%;
+	border:0;
+}
+@keyframes slideinleft {
+  0% {
+    margin-left: 100%;
+    filter: blur(2px);
+  }
+  100% {
+    margin-left: 0%;
+    filter: blur(0);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 1;
+
+  }
+  100% {
+   opacity: 0;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+
+  }
+  100% {
+   opacity: 1;
+  }
+}
+@-webkit-keyframes flyleft {
+		0% { -webkit-transform:  translate(-103px); }  
+		100% { -webkit-transform: translate(300px); } 
+} 
+
+.hide{
+	display:none;
+}
+#qzad{
+	width:480px;
+	height:550px;
+	position:relative;
+	background:  url(../img/f1-bg.jpg) 0 0 no-repeat;
+}
+.frames{
+	position:absolute;
+	width:100%;
+	top:0;
+	bottom:0;
+	height:550px;
+	&.hide{
+		display: none;
+	}
+	&.f1{
+		.tagline{
+			margin:230px auto 0 auto;
+			width:390px;	
+		}
+		.logo{
+			width:300px;
+			margin:228px auto 0 auto;
+		}
+	}
+	&.f2{
+		height:100%;
+		.row{
+			position:relative;
+			left:0;
+			overflow: hidden;
+			width:480px;
+			height:275px;
+			div{
+				position:absolute;
+				top:0;
+				width:160px;
+				height: 275px;
+				 -webkit-transition: all .5s ease;
+				 	-moz-transition: all .5s ease;
+				 	 -o-transition: all .5s ease;
+						 transition: all .5s ease;
+			}
+			.thumb{
+				display: block;
+				height:100%;
+			}
+			&.upper{
+				position:relative;
+				div{
+					
+					left:480px;
+					&.animateLeft{
+						-webkit-animation: slideinleft .5635s  linear;
+						-moz-animation: flyleft .5635s  linear;
+						-o-animation: flyleft .5635s linear;
+						animation: slideinleft .5635s linear;
+					}
+				}
+			}
+			&.bottom{
+				position:relative;
+				div{
+					left:-480px;
+				}
+			}
+		}
+		&.fade{
+			
+			opacity: 0;
+			-webkit-animation: fade 0.3s forwards;
+					animation: fade 0.3s forwards;
+		}
+	}
+	&.f3{
+		opacity: 1;
+	       -webkit-transition: opacity .25s ease-out;
+	   	      -moz-transition: opacity .25s ease-out;
+	   	    	 -o-transition: opacity .25s ease-out;
+	   	   	    	transition: opacity .25s ease-out;
+		.photo{
+			position: absolute;
+			top:0;
+			right: 0;
+			width:170px;
+			overflow: hidden;
+			height:275px;
+			  -webkit-transition: all .5s ease;
+ 				 -moz-transition: all .5s ease;
+ 			 	   -o-transition: all .5s ease;
+  					 transition: all .5s ease;
+			img{
+				margin-left: -25px;
+				width: 480px;
+				height:550px;
+				margin-top: -5px;
+				opacity: 0;
+			}
+			&.anim{
+				width:480px;
+				height:550px;
+				img{
+					height: 550px;
+					width: 480px;
+					opacity: 1;
+					margin-left: 0;
+					width: auto;
+					margin-top: 0;
+				}
+			}
+		}
+		&.fade{
+			opacity: 0;
+			-webkit-animation: fade 0.75s forwards;
+			-moz-animation: fade 0.75s forwars;
+				animation: fade 0.75s forwards;
+		}
+	}
+	&.f4{
+		position:relative;
+		opacity: 1;
+		&.fade-in{
+		opacity: 0;
+				 -webkit-animation: fade-in 0.85s ease;
+					-moz-animation: fade-in 0.85s ease;
+					  -o-animation: fade-in 0.85s ease;
+						 animation: fade-in 0.85s ease;
+		}
+		.tagline{
+			position:inherit;
+			margin: 0 auto;
+			top: 45px;
+			width: 392px;
+		}
+		.vid-container{
+			position:relative;
+			width: 370px;
+			height: 322px;
+			margin: 0 auto;
+			top:72px;
+			a{
+				display: block;
+				width: 100%;
+				height: 100%;
+				border:0;
+			}
+		}
+		.vid-large{
+			height: 206px;
+			width: 370px;
+			a{
+				background:  
+					url(../img/f4-playSymbol.png) center center no-repeat, 
+					url(../img/f4-thumb-video-large.jpg) 0 0 no-repeat;
+				background-origin: 50% 50%;
+			}
+		}
+		.vid-small{
+			position:absolute;
+			top:223px;
+			width: 175px;
+			height: 100px;
+
+			a{
+				background: 
+					url(../img/f4-playSymbol-small.png) center center no-repeat, 
+					url(../img/f4-thumb-video-small.jpg) 0 0 no-repeat;
+				background-origin: 50% 50%;
+			}
+			&:last-child{
+				left:195px;
+				a{
+					background: 
+						url(../img/f4-playSymbol-small.png) center center no-repeat, 
+						url(../img/f4-thumb-video-small-right.jpg) 0 0 no-repeat;
+					background-origin: 50% 50%;
+				}
+			}
+		}
+		.logo{
+			position:inherit;
+			margin: 143px auto 0 auto;
+			width:300px;
+			bottom:18px;
+		}
+	}
+}
