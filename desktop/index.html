@@ -36,7 +36,22 @@
 			<div class="logo"><img src="img/logo.png" width="368" alt="" /></div>
 			<div class="cta"><a href="http://people.cathaypacific.com/people/en/home"><img src="img/cta.png" alt="315"></a></div>
 			<a class="close ixtrack" data-ix-category="internal" data-ix-label="close video" >&#215;</a>
-			<div class="video-container"></div>
+			<div class="video-container">
+				<object id="myExperience" class="BrightcoveExperience">
+					<param name="bgcolor" value="#FFFFFF" />
+					<param name="width" value="" />
+					<param name="height" value="" />
+					<param name="playerID" value="1783580117001" />
+					<param name="playerKey" value="AQ~~,AAABnwxttEE~,HpQpfOmVc2uIuYoJ5Ua7iU_HbguYUAep" />
+					<param name="isVid" value="true" />
+					<param name="isUI" value="true" />
+					<param name="dynamicStreaming" value="true" />
+					<param name="includeAPI" value="true" />
+					<param name="templateLoadHandler" value="onTemplateLoad" />
+					<param name="templateReadyHandler" value="onTemplateReady" />
+					<param name="@videoPlayer" value="" />
+				</object>
+			</div>
 		</div>
 	</div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
@@ -49,9 +64,11 @@
 	<script src="http://app.qz.com/js/frameMessager/frameMessager.js" type="text/javascript"></script>
 	<script type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
 	<script type="text/javascript">
+		var currentVideo = '';
 		var times=[2500, 2000, 3500];
 		var currentFrame = 0;
 		var imgs = [];
+		var parentW;
 		var frames = [
 			function () {
 				setTimeout(function() {
@@ -63,82 +80,69 @@
 				$('#f2').fadeIn(100);
 				$('#f2 .upper').append(addThumbs()[0]);
 				$('#f2 .bottom').append(addThumbs()[1]);
-				var d = 0, r=0, xpos;
-
+				var d = 0, r=0, xpos, animating = false;
 				$('.row div').each(function () {
 					var that = $(this);
-					setTimeout(function() {
-						var upper = $(that).parent('.row').hasClass('upper');	
-						if(upper){							
-						 	xpos = that.width() * d;						
-							that.delay(150 * d).animate({left: xpos}, 50);
-							d++;
-						}else{
-							xpos = that.width() * r;
-							that.delay(150 * r).animate({ left: xpos }, 50);
-							r++;
-						}
-					}, 500 * d);
+					parentW = $('.row').width();
+					if(animating){
+						return
+					}else{
+						setTimeout(function() {
+							animating = true;
+							var upper = $(that).parent('.row').hasClass('upper');	
+							if(upper){							
+							 	xpos = ( (that.width() * d) / parentW ) * 100 ;						
+								that.delay(150 * d).animate({left: xpos+'%'}, 50);
+								d++;
+
+							}else{
+								xpos = ( (that.width() * r) / parentW ) * 100 ;	
+								that.delay(150 * r).animate({ left: xpos+'%' }, 50);
+								r++;
+							}
+						}, 500 * d);
+					}
+
 				});	
 				$('#f3').show();
 			},
 			//frame 3
-			function () {
+			// function () {
 				
-				setTimeout(function() {
-					$('#f3  .photo').addClass('anim');
-					setTimeout(function() {
-						$('#f3 .copy').fadeIn(100);
-					}, 200);
-				}, 1500);		
-			 },
+			// 	setTimeout(function() {
+			// 		$('#f3  .photo').addClass('anim');
+			// 		setTimeout(function() {
+			// 			$('#f3 .copy').fadeIn(100);
+			// 		}, 200);
+			// 	}, 1500);		
+			//  },
 			//frame 4
-			function () {
-				setTimeout(function() {
-					$('#f3, #f2').addClass('fade');
-				}, 500);
+			// function () {
+			// 	setTimeout(function() {
+			// 		$('#f3, #f2').addClass('fade');
+			// 	}, 500);
 				
-				$('#f4').delay(500).fadeIn(1000);
-			}
+			// 	$('#f4').delay(500).fadeIn(1000);
+			// }
 		];
-		removePlayer = function() {
-			/* Remove the BC video player object, hide the container */
-			$('#myExperience').remove();
-			$('.video-container').hide();
-		};
-		addPlayer = function(vidId) {
-			/* Add the BC video player object */
-			$('.video-container').append('<object id="myExperience" class="BrightcoveExperience">' +
-						'<param name="bgcolor" value="#FFFFFF" />' +
-						'<param name="width" value="" />' +
-						'<param name="height" value="" />' +
-						'<param name="playerID" value="1783580117001" />' +
-						'<param name="playerKey" value="AQ~~,AAABnwxttEE~,HpQpfOmVc2uIuYoJ5Ua7iU_HbguYUAep" />' +
-						'<param name="isVid" value="true" />' +
-						'<param name="isUI" value="true" />' +
-						'<param name="dynamicStreaming" value="true" />' +
-						'<param name="includeAPI" value="true" />' +
-						'<param name="templateLoadHandler" value="onTemplateLoad" />' +
-						'<param name="templateReadyHandler" value="onTemplateReady" />' +
-						'<param name="@videoPlayer" value="'+vidId+'" />'+
-					'</object>');
-		};
 		onTemplateLoad = function(experienceID){
 			player = brightcove.api.getExperience(experienceID);
 	        APIModules = brightcove.api.modules.APIModules;
 		};
 		onTemplateReady = function(){
+		
 			videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
 			contentModule = player.getModule(APIModules.CONTENT);
+			videoPlayer.loadVideoByID(currentVideo);
 			videoPlayer.addEventListener(brightcove.api.events.MediaEvent.COMPLETE, mediaEventCompleteHandler);
 
-			/* Get the current video and change the display name - update the media after the change and play the video */
-			videoPlayer.getCurrentVideo( function (videoDTO) {
-				videoDTO.displayName = "";
-				contentModule.updateMedia(videoDTO, function (newVideoDTO) {
-					/* Play the video */
-					videoPlayer.play();
-				});
+			videoPlayer.getCurrentVideo(function(videoDTO) {
+				if(videoDTO) {
+					videoDTO.displayName = "";
+					contentModule.updateMedia(videoDTO, function(newVideoDTO) {
+						videoPlayer.play();
+					});
+				}
 			});
 		};
 		mediaEventCompleteHandler = function(){
@@ -156,34 +160,48 @@
 		function addThumbs () {
 			var string1 = '';
 			var string2 = '';
-
-			for (i = 1; i <= 6; i++) {
-				if(i<=3){
-					string1+= '<div class="r1-'+i+' left"><img class="thumb" src="img/f2-r1-thumb'+i+'.jpg" /></div>';
-					string2+= '<div class="r2-'+i+' left"><img class="thumb" src="img/f2-r2-thumb'+i+'.jpg" /></div>';
-				}else{
-					string1+= '<div class="r1-'+i+'"><img class="thumb" src="img/f2-r1-thumb'+i+'.jpg" /></div>';
-					string2+= '<div class="r2-'+i+'"><img class="thumb" src="img/f2-r2-thumb'+i+'.jpg" /></div>';
-				}
-			
-			};
+			parentW = $('#qzad').width();
+			if(parentW <= 720){
+				console.log(parentW);
+				for (i = 1; i <= 4; i++) {
+					if(i<=2){
+						string1+= '<div class="r1-'+i+' left"><img class="thumb" src="img/f2-r1-thumb'+i+'.jpg" /></div>';
+						string2+= '<div class="r2-'+i+' left"><img class="thumb" src="img/f2-r2-thumb'+i+'.jpg" /></div>';
+					 }else{
+					 	string1+= '<div class="r1-'+i+'"><img class="thumb" src="img/f2-r1-thumb'+(i+2)+'.jpg" /></div>';
+					 	string2+= '<div class="r2-'+i+'"><img class="thumb" src="img/f2-r2-thumb'+(i+2)+'.jpg" /></div>';
+					 }
+				};
+			}else{
+				for (i = 1; i <= 6; i++) {
+					if(i<=3){
+						string1+= '<div class="r1-'+i+' left"><img class="thumb" src="img/f2-r1-thumb'+i+'.jpg" /></div>';
+						string2+= '<div class="r2-'+i+' left"><img class="thumb" src="img/f2-r2-thumb'+i+'.jpg" /></div>';
+					}else{
+						string1+= '<div class="r1-'+i+'"><img class="thumb" src="img/f2-r1-thumb'+i+'.jpg" /></div>';
+						string2+= '<div class="r2-'+i+'"><img class="thumb" src="img/f2-r2-thumb'+i+'.jpg" /></div>';
+					}
+				};
+			}
 			imgs[0] = string1;
 			imgs[1] = string2;
 			return imgs;
 		};
 		$(document).ready(function(){
 			changeFrame();
-			$('.link a').on('click', function(e){
-				
+			$('.link a').on('click',function(e){
 				e.preventDefault();
-				addPlayer($(e.target).data('id'));
+				
 				$('.video-container').show();
-				$('.close').show();
-				$('.close').off().on('click', function(e){
-					removePlayer();
+
+				currentVideo = $(e.currentTarget).data('id');
+				brightcove.createExperiences();
+
+				$('.close').show().off().on('click', function(e){
+					e.preventDefault();
+					$('.video-container').hide();
 					$(this).toggle();
 				});
-				brightcove.createExperiences();
 			});
 		});
 	</script>

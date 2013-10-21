@@ -302,13 +302,13 @@ img{
 				width:100%;
 				div{
 					width:25%;
-					&.r1-3, &.r1-4, &.r2-3, &.r2-4{
-						img{
-							display: none;
-						}
-						width: 0;
-						display: none;
-					}	
+					// &.r1-3, &.r1-4, &.r2-3, &.r2-4{
+					// 	img{
+					// 		display: none;
+					// 	}
+					// 	width: 0;
+					// 	display: none;
+					// }	
 					.thumb{
 						display: inline-block;
 						width: 100%;

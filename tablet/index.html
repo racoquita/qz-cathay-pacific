@@ -104,10 +104,10 @@
 				}, 500);			
 			 },
 			//frame 4
-			// function () {
-			// 	$('.f3, .f2').addClass('fade');
-			// 	$('#f4').fadeIn(500);
-			//}
+			function () {
+				$('.f3, .f2').addClass('fade');
+				$('#f4').fadeIn(500);
+			}
 		];
 		function changeFrame () {
 			if($.isFunction(frames[currentFrame])) {
@@ -136,12 +136,12 @@
 			return imgs;
 		};
 		onTemplateLoad = function(experienceID){
-			console.log('load');
+			
 			player = brightcove.api.getExperience(experienceID);
 	        APIModules = brightcove.api.modules.APIModules;
 		};
 		onTemplateReady = function(){
-			console.log('ready');
+		
 			videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
 			contentModule = player.getModule(APIModules.CONTENT);
 			videoPlayer.loadVideoByID(currentVideo);
@@ -163,7 +163,6 @@
 			changeFrame();
 			$('.link a').on('click',function(e){
 				e.preventDefault();
-				
 				$('.video-container').show();
 
 				currentVideo = $(e.currentTarget).data('id');

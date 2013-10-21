@@ -280,13 +280,6 @@ img {
   .frames.f2 .row div {
     width: 25%;
   }
-  .frames.f2 .row div.r1-3, .frames.f2 .row div.r1-4, .frames.f2 .row div.r2-3, .frames.f2 .row div.r2-4 {
-    width: 0;
-    display: none;
-  }
-  .frames.f2 .row div.r1-3 img, .frames.f2 .row div.r1-4 img, .frames.f2 .row div.r2-3 img, .frames.f2 .row div.r2-4 img {
-    display: none;
-  }
   .frames.f2 .row div .thumb {
     display: inline-block;
     width: 100%;
