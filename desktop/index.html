@@ -29,20 +29,31 @@
 
 		</div>
 		<div class="frames f4 hide" id="f4">
+			
 			<div class="tagline"><img src="img/f1-tagline.png" alt=""/></div>
 			<div class="vid-container">
-				<div class="vid-large"><a href="#"></a></div>
-				<div class="vid-small"><a href="#"></a></div>
-				<div class="vid-small"><a href="#"></a></div>
+				<div class="vid-large link"><a href="#"></a></div>
+				<div class="vid-small link"><a href="#"></a></div>
+				<div class="vid-small link"><a href="#"></a></div>
 			</div>
 			<div class="logo"><img src="img/logo.png" width="368" alt="" /></div>
-			<div class="cta"><a href="#"><img src="img/cta.png" alt="315"></a></div>
+			<div class="cta"><a href="http://people.cathaypacific.com/people/en/home"><img src="img/cta.png" alt="315"></a></div>
+			<a class="close ixtrack" data-ix-category="internal" data-ix-label="close video" >&#215;</a>
+			<div class="video-container"></div>
 		</div>
 
 	</div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+	<script id="ix-namer"
+		data-ix-name="Cathay Pacific Tablet"
+		src="http://ads.qz.com/js/qzad/qzad-1.0.js"
+		type="text/javascript">
+	</script>
+	<script src="http://app.qz.com/js/frameMessager/QZIX.js" type="text/javascript"></script>
+	<script src="http://app.qz.com/js/frameMessager/frameMessager.js" type="text/javascript"></script>
+	<script type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
 	<script type="text/javascript">
-		var times=[2000, 2000, 2000];
+		var times=[2000, 2500, 3000];
 		var currentFrame = 0;
 		var imgs = [];
 		var frames = [
@@ -52,46 +63,89 @@
 			//frame 2
 			function () {
 				console.log('frame2');
-				
-				$('#f1').addClass('hide');
-				$('#f2').show();
+				$('#f1').fadeOut();
+				$('#f2').fadeIn(100);
 				$('#f2 .upper').append(addThumbs()[0]);
 				$('#f2 .bottom').append(addThumbs()[1]);
-			
 				var d = 0;
 				var r =0;
-				var timer = setInterval(function(){
-					
-					 var obj = $('.upper div')[d];
-					 $(obj).addClass('animateLeft')
-					// var objBottom = $('.bottom div')[d];
-					// var objw = ($(obj).width() / $('#qzad').width()) * 100;
-					// var objBw =  ($(objBottom).width() / $('#qzad').width()) * 100;
-					// $(obj).css('left', (objw * d)+'%');
-					// $(objBottom).css('left', (objBw * d)+'%');
-					 //d++;
-				}, 100);	
-				clearInterval(d);
-
-			}//,
+				var xpos;
+				$('.row div').each(function () {
+					var that = $(this);
+					setTimeout(function() {
+						var upper = $(that).parent('.row').hasClass('upper');	
+						if(upper){							
+						 	xpos = that.width() * d;						
+							that.delay(200 * d).animate({left: xpos}, 50);
+							d++
+						}else{
+							xpos = that.width() * r;
+							that.delay(200 * r).animate({ left: xpos }, 50);
+							r++;
+						}
+					}, 500 * d);
+				});	
+			},
 			//frame 3
-			// function () {
-			// 	console.log('frame3');
-			// 	$('#f3').show();
-			// 	setTimeout(function() {
-			// 		$('#f3  .photo').addClass('anim');
-			// 		setTimeout(function() {
-			// 			$('#f3 .copy').show()
-			// 		}, 250);
-			// 	}, 200);
+			function () {
+				$('#f3').fadeIn(500);
+				setTimeout(function() {
+					$('#f3  .photo').addClass('anim');
+					setTimeout(function() {
+						$('#f3 .copy').fadeIn();
+					}, 250);
+				}, 1500);
 					
-			// },
+			 },
 			//frame 4
-			// function () {
-			// 	$('.f3, .f2').addClass('fade');
-			// 	$('#f4').show();
-			// }
-		]
+			function () {
+				$('#f3, #f2').addClass('fade');
+				$('#f4').delay(10).fadeIn(1000);
+			}
+		];
+		removePlayer = function() {
+			/* Remove the BC video player object, hide the container */
+			$('#myExperience').remove();
+			$('.video-container').hide();
+		};
+		addPlayer = function() {
+			/* Add the BC video player object */
+			$('.video-container').append('<object id="myExperience" class="BrightcoveExperience">' +
+						'<param name="bgcolor" value="#FFFFFF" />' +
+						'<param name="width" value="" />' +
+						'<param name="height" value="" />' +
+						'<param name="playerID" value="1783580117001" />' +
+						'<param name="playerKey" value="AQ~~,AAABnwxttEE~,HpQpfOmVc2uIuYoJ5Ua7iU_HbguYUAep" />' +
+						'<param name="isVid" value="true" />' +
+						'<param name="isUI" value="true" />' +
+						'<param name="dynamicStreaming" value="true" />' +
+						'<param name="includeAPI" value="true" />' +
+						'<param name="templateLoadHandler" value="onTemplateLoad" />' +
+						'<param name="templateReadyHandler" value="onTemplateReady" />' +
+						'<param name="@videoPlayer" value="2738093511001" />'+
+					'</object>');
+		};
+		onTemplateLoad = function(experienceID){
+			player = brightcove.api.getExperience(experienceID);
+	        APIModules = brightcove.api.modules.APIModules;
+		};
+		onTemplateReady = function(){
+			videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
+			contentModule = player.getModule(APIModules.CONTENT);
+			videoPlayer.addEventListener(brightcove.api.events.MediaEvent.COMPLETE, mediaEventCompleteHandler);
+
+			/* Get the current video and change the display name - update the media after the change and play the video */
+			videoPlayer.getCurrentVideo( function (videoDTO) {
+				videoDTO.displayName = "";
+				contentModule.updateMedia(videoDTO, function (newVideoDTO) {
+					/* Play the video */
+					videoPlayer.play();
+				});
+			});
+		};
+		mediaEventCompleteHandler = function(){
+			$('.close').trigger('click');
+		};
 		function changeFrame () {
 			if($.isFunction(frames[currentFrame])) {
 				frames[currentFrame]();
@@ -101,7 +155,7 @@
 					changeFrame();
 				}, times[currentFrame]);
 			}
-		}
+		};
 		function addThumbs () {
 			var string1 = '';
 			var string2 = '';
@@ -119,9 +173,20 @@
 			imgs[0] = string1;
 			imgs[1] = string2;
 			return imgs;
-		}
+		};
 		$(document).ready(function(){
 			changeFrame();
+			$('.link a').on('click', function(e){
+				alert('bob')
+				e.preventDefault();
+				addPlayer();
+				$('.video-container').show();
+				$('.close').show();
+				$('.close').off().on('click', function(e){
+					removePlayer();
+				});
+				brightcove.createExperiences();
+			});
 		});
 	</script>
 </body>
