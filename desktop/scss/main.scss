@@ -1,21 +1,16 @@
 
+a{
+	outline: 0;
+	border:0;
+	text-decoration: none;
+}
 img{
-	display: inline-block;
+	display: block;
 	width:100%;
 	border:0;
 }
 .hide{
 	display:none;
-}
-@keyframes slideinleft {
-  0% {
-    margin-left: 100%;
-    filter: blur(2px);
-  }
-  100% {
-    margin-left: 0%;
-    filter: blur(0);
-  }
 }
 @keyframes fade {
   0% {
@@ -26,24 +21,14 @@ img{
    opacity: 0;
   }
 }
-@-webkit-keyframes flyleft {
-		0% { -webkit-transform:  translate(-103px); }  
-		100% { -webkit-transform: translate(300px); } 
-} 
-@-moz-keyframes flyleft {
-		from { -moz-transform:  rotate(0deg) scale(0.813) skew(1deg) translate(-103px); }  
-		to { -moz-transform:  rotate(0deg) scale(0.813) skew(1deg) translate(300px); } 
-} 
-@-o-keyframes flyleft {
-		from { -o-transform:  rotate(0deg) scale(0.813) skew(1deg) translate(-103px); }  
-		to { -o-transform:  rotate(0deg) scale(0.813) skew(1deg) translate(300px); } 
-}
 #qzad{
 	min-width:720px;
 	max-width:1100px;
 	height:480px;
 	position:relative;
 	background:  url(../img/f1-bg.jpg) 0 0 no-repeat;
+
+
 }
 .frames{
 	position:absolute;
@@ -74,7 +59,6 @@ img{
 			overflow: hidden;
 			width:100%;
 			height:240px;
-
 			div{
 				position:absolute;
 				top:0;
@@ -95,23 +79,15 @@ img{
 				div{
 					
 					left:100%;
-					&.animateLeft{
-						-webkit-animation: flyleft .5635s  linear;
-						-moz-animation: flyleft .5635s  linear;
-						-o-animation: flyleft .5635s linear;
-						animation: flyleft .5635s linear;
-					}
 				}
 			}
 			&.bottom{
 				div{
-
 					left:-100%;
 				}
 			}
 		}
 		&.fade{
-			
 			opacity: 0;
 			-webkit-animation: fade 0.3s forwards;
 					animation: fade 0.3s forwards;
@@ -119,37 +95,35 @@ img{
 	}
 	&.f3{
 		opacity: 1;
-	   -webkit-transition: opacity .25s ease-out;
-	   	   -moz-transition: opacity .25s ease-out;
-	   	    	-o-transition: opacity .25s ease-out;
-	   	   	    transition: opacity .25s ease-out;
+	   -webkit-transition: opacity .5s ease;
+	   	   -moz-transition: opacity .5s ease;
+	   	    	-o-transition: opacity .5s ease;
+	   	   	    transition: opacity .5s ease;
 		.photo{
 			position: absolute;
 			top:0;
 			right: 0;
-			width:16.8%;
+			left: 83%;
+			bottom:240px;
 			overflow: hidden;
-			height:240px;
-			  -webkit-transition: all .5s ease;
- 				 -moz-transition: all .5s ease;
- 			 	   -o-transition: all .5s ease;
-  					 transition: all .5s ease;
+			  -webkit-transition: all 1s ease;
+ 				 -moz-transition: all 1s ease;
+ 			 	   -o-transition: all .75s ease;
+  					 transition: all 1s ease;
 			img{
-				height: 95%;
-				margin-left: -25px;
-				width: auto;
-				margin-top: -5px;
 				opacity: 0;
+				height: 97%;
+				width: auto;
+				margin-left: -25px;
+				margin-top: -9px;
 			}
 			&.anim{
-				width:67%;
-				height:480px;
+				left:32.9%;
+				bottom:0;
 				img{
-					height: 480px;
-					width: auto;
+					height: 100%;
 					opacity: 1;
 					margin-left: 0;
-					width: auto;
 					margin-top: 0;
 				}
 			}
@@ -164,6 +138,8 @@ img{
 		&.fade{
 			opacity: 0;
 			-webkit-animation: fade 0.3s forwards;
+			-moz-animation: fade 0.3s forwards;
+			-o-animation:fade 0.3s forwards;
 			animation: fade 0.3s forwards;
 		}
 	}
@@ -253,7 +229,7 @@ img{
 		  height: 100%;
 		}
 		.close {
-		  display: block;
+		  
 		  vertical-align: middle;
 		  cursor: pointer;
 		  position: absolute;
@@ -292,13 +268,7 @@ img{
 			.row{
 				width:100%;
 				div{
-					width:25%;
-					&.r1-3, &.r1-4, &.r2-3, &.r2-4{
-						img{
-							display: none;
-						}
-						display: none;
-					}	
+					width:25%;	
 					.thumb{
 						display: inline-block;
 						width: 100%;

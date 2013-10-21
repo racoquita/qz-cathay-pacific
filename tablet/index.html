@@ -52,7 +52,9 @@
 		var imgs = [];
 		var frames = [
 			function () {
-				console.log('frame1');
+				setTimeout(function() {
+					$('#f1').fadeOut(1500);
+				}, 500);
 			},
 			//frame 2
 			function () {
@@ -64,17 +66,15 @@
 				var xpos;
 				$('.row div').each(function () {
 					var that = $(this);
-
 					setTimeout(function() {
 						var upper = $(that).parent('.row').hasClass('upper');	
 						if(upper){							
-						 	xpos = that.width() * d;
-							console.log('xpos: ' + xpos);						
-							that.delay(200 * d).animate({left: xpos}, 50);
+						 	xpos = that.width() * d;						
+							that.delay(200 * d).animate({left: xpos}, 10);
 							d++;
 						}else{
 							xpos = that.width() * r;
-							that.delay(200 * r).animate({ left: xpos }, 50)
+							that.delay(200 * r).animate({ left: xpos }, 10)
 							r++;
 						}
 					}, 300 * d);
@@ -88,10 +88,10 @@
 				}, 500);			
 			 },
 			//frame 4
-			function () {
-				$('.f3, .f2').addClass('fade');
-				$('#f4').fadeIn(500);
-			}
+			// function () {
+			// 	$('.f3, .f2').addClass('fade');
+			// 	$('#f4').fadeIn(500);
+			//}
 		];
 		function changeFrame () {
 			if($.isFunction(frames[currentFrame])) {
@@ -102,9 +102,9 @@
 				}, times[currentFrame]);
 			}
 		};
+		// dynamically creates thumbnails for frame 2
 		function addThumbs () {
-			var string1 = '';
-			var string2 = '';
+			var string1 = '', string2 = '';
 
 			for (i = 1; i <= 3; i++) {
 				if(i<=3){
@@ -122,7 +122,6 @@
 		removePlayer = function() {
 			/* Remove the BC video player object, hide the container */
 			//$('#myExperience').remove();
-
 			$('.video-container').empty().hide();
 		};
 		addPlayer = function(vidId) {
@@ -165,22 +164,20 @@
 		};
 		$(document).ready(function(){
 			changeFrame();
-			//$('.link a').each(function(){
-				$('.link a').on('click',function(e){
+			$('.link a').on('click',function(e){
+				e.preventDefault();
+				$('.video-container').show();
+				addPlayer($(e.target).data('id'));
+				
+				$('.close').show();
+				$('.close').off().on('click', function(e){
 					e.preventDefault();
-			
-					addPlayer($(e.target).data('id'));
-					$('.video-container').show();
-					$('.close').show();
-					$('.close').off().on('click', function(e){
-						e.preventDefault();
-						removePlayer();
-						$(this).toggle();
-						//$('.video-container').hide();
-					});
-					brightcove.createExperiences();
+					removePlayer();
+					$(this).toggle();
+					//$('.video-container').hide();
 				});
-			//});
+				brightcove.createExperiences();
+			});
 		});
 	</script>
 </body>

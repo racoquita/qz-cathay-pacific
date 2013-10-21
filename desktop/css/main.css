@@ -1,23 +1,17 @@
+a {
+  outline: 0;
+  border: 0;
+  text-decoration: none;
+}
+
 img {
-  display: inline-block;
+  display: block;
   width: 100%;
   border: 0;
 }
 
 .hide {
   display: none;
-}
-
-@keyframes slideinleft {
-  0% {
-    margin-left: 100%;
-    filter: blur(2px);
-  }
-
-  100% {
-    margin-left: 0%;
-    filter: blur(0);
-  }
 }
 
 @keyframes fade {
@@ -27,36 +21,6 @@ img {
 
   100% {
     opacity: 0;
-  }
-}
-
-@-webkit-keyframes flyleft {
-  0% {
-    -webkit-transform: translate(-103px);
-  }
-
-  100% {
-    -webkit-transform: translate(300px);
-  }
-}
-
-@-moz-keyframes flyleft {
-  from {
-    -moz-transform: rotate(0deg) scale(0.813) skew(1deg) translate(-103px);
-  }
-
-  to {
-    -moz-transform: rotate(0deg) scale(0.813) skew(1deg) translate(300px);
-  }
-}
-
-@-o-keyframes flyleft {
-  from {
-    -o-transform: rotate(0deg) scale(0.813) skew(1deg) translate(-103px);
-  }
-
-  to {
-    -o-transform: rotate(0deg) scale(0.813) skew(1deg) translate(300px);
   }
 }
 
@@ -119,12 +83,6 @@ img {
 .frames.f2 .row.upper div {
   left: 100%;
 }
-.frames.f2 .row.upper div.animateLeft {
-  -webkit-animation: flyleft .5635s  linear;
-  -moz-animation: flyleft .5635s  linear;
-  -o-animation: flyleft .5635s linear;
-  animation: flyleft .5635s linear;
-}
 .frames.f2 .row.bottom div {
   left: -100%;
 }
@@ -135,40 +93,38 @@ img {
 }
 .frames.f3 {
   opacity: 1;
-  -webkit-transition: opacity .25s ease-out;
-  -moz-transition: opacity .25s ease-out;
-  -o-transition: opacity .25s ease-out;
-  transition: opacity .25s ease-out;
+  -webkit-transition: opacity .5s ease;
+  -moz-transition: opacity .5s ease;
+  -o-transition: opacity .5s ease;
+  transition: opacity .5s ease;
 }
 .frames.f3 .photo {
   position: absolute;
   top: 0;
   right: 0;
-  width: 16.8%;
+  left: 83%;
+  bottom: 240px;
   overflow: hidden;
-  height: 240px;
-  -webkit-transition: all .5s ease;
-  -moz-transition: all .5s ease;
-  -o-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all .75s ease;
+  transition: all 1s ease;
 }
 .frames.f3 .photo img {
-  height: 95%;
-  margin-left: -25px;
-  width: auto;
-  margin-top: -5px;
   opacity: 0;
+  height: 97%;
+  width: auto;
+  margin-left: -25px;
+  margin-top: -9px;
 }
 .frames.f3 .photo.anim {
-  width: 67%;
-  height: 480px;
+  left: 32.9%;
+  bottom: 0;
 }
 .frames.f3 .photo.anim img {
-  height: 480px;
-  width: auto;
+  height: 100%;
   opacity: 1;
   margin-left: 0;
-  width: auto;
   margin-top: 0;
 }
 .frames.f3 .copy {
@@ -181,6 +137,8 @@ img {
 .frames.f3.fade {
   opacity: 0;
   -webkit-animation: fade 0.3s forwards;
+  -moz-animation: fade 0.3s forwards;
+  -o-animation: fade 0.3s forwards;
   animation: fade 0.3s forwards;
 }
 .frames.f4 {
@@ -264,7 +222,6 @@ img {
   height: 100%;
 }
 .frames.f4 .close {
-  display: block;
   vertical-align: middle;
   cursor: pointer;
   position: absolute;
@@ -297,12 +254,6 @@ img {
   }
   .frames.f2 .row div {
     width: 25%;
-  }
-  .frames.f2 .row div.r1-3, .frames.f2 .row div.r1-4, .frames.f2 .row div.r2-3, .frames.f2 .row div.r2-4 {
-    display: none;
-  }
-  .frames.f2 .row div.r1-3 img, .frames.f2 .row div.r1-4 img, .frames.f2 .row div.r2-3 img, .frames.f2 .row div.r2-4 img {
-    display: none;
   }
   .frames.f2 .row div .thumb {
     display: inline-block;
