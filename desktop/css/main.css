@@ -38,6 +38,7 @@ img {
   0% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -143,10 +144,10 @@ img {
   left: 83%;
   bottom: 240px;
   overflow: hidden;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: all .7s ease;
+  -moz-transition: all .7s ease;
+  -o-transition: all .7s ease;
+  transition: all .7s ease;
 }
 .frames.f3 .photo img {
   opacity: 0;

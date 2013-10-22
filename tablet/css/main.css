@@ -138,7 +138,7 @@ img {
   position: relative;
 }
 .frames.f2 .row.bottom div {
-  left: -480px;
+  right: 480px;
 }
 .frames.f2.fade {
   opacity: 0;
@@ -263,7 +263,7 @@ img {
   height: 100%;
 }
 .frames.f4 .close {
-  display: inline-block;
+  display: block;
   vertical-align: middle;
   cursor: pointer;
   position: absolute;

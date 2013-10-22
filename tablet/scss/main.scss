@@ -76,12 +76,11 @@ img{
 				top:0;
 				width:160px;
 				height: 275px;
-				 -webkit-transition: all .5s ease;
-				 	-moz-transition: all .5s ease;
+				-webkit-transition: all .5s ease;
+				   -moz-transition: all .5s ease;
 				 	 -o-transition: all .5s ease;
-						 transition: all .5s ease;
+						transition: all .5s ease;
 				&.f2-r1-thumb3 {
-
 					img{
 						margin-left: -25px;
 						width: 480px;
@@ -89,7 +88,6 @@ img{
 						margin-top: -5px;
 						opacity: 0;
 					}
-
 				}
 			}
 			.thumb{
@@ -105,7 +103,7 @@ img{
 			&.bottom{
 				position:relative;
 				div{
-					left:-480px;
+					right:480px;
 				}
 			}
 		}
@@ -240,7 +238,7 @@ img{
 		  height: 100%;
 		}
 		.close {
-		  display: inline-block;
+		  display: block;
 		  vertical-align: middle;
 		  cursor: pointer;
 		  position: absolute;

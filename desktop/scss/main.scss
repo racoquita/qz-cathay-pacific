@@ -110,10 +110,10 @@ img{
 			left: 83%;
 			bottom:240px;
 			overflow: hidden;
-			  -webkit-transition: all 1s ease;
- 				 -moz-transition: all 1s ease;
- 			 	   -o-transition: all 1s ease;
-  					  transition: all 1s ease;
+			  -webkit-transition: all .7s ease;
+ 				 -moz-transition: all .7s ease;
+ 			 	   -o-transition: all .7s ease;
+  					  transition: all .7s ease;
 			img{
 				opacity: 0;
 				height: 97%;
@@ -142,9 +142,9 @@ img{
 		&.fade{
 			opacity: 0;
 			-webkit-animation: fade 1s forwards;
-			-moz-animation: fade 1s forwards;
-			-o-animation:fade 1s forwards;
-			animation: fade 1s forwards;
+			   -moz-animation: fade 1s forwards;
+			      -o-animation:fade 1s forwards;
+					animation: fade 1s forwards;
 		}
 	}
 	&.f4{
@@ -175,9 +175,7 @@ img{
 			width: 66.4705882353%;
 			min-width: 400px;
 			a{
-				background:  
-					url(../img/f4-playSymbol.png) center center no-repeat, 
-					url(../img/f4-thumb-video-large.jpg) 0 0 no-repeat;
+				background:  url(../img/f4-playSymbol.png) center center no-repeat, url(../img/f4-thumb-video-large.jpg) 0 0 no-repeat;
 				background-size: 50%, 100%;
 				background-origin: 50% 50%;
 			}

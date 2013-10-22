@@ -28,6 +28,7 @@
 		</div>
 		<div class="frames f4 hide" id="f4">
 			<div class="tagline"><img src="img/f1-tagline.png" alt=""/></div>
+			
 			<div class="vid-container">
 				<div class="vid-large link"><a href="#" class="ixtrack" data-ix-category="internal" data-id="2757409367001" data-ix-label="Nigel video"></a></div>
 				<div class="vid-small link"><a href="#" class="ixtrack" data-ix-category="internal" data-id="2757389883001" data-ix-label="Nadia video"></a></div>
@@ -78,7 +79,7 @@
 			};
 		})();
 		var currentVideo = '';
-		var times=[3500, 3000, 4500];
+		var times=[3000, 3000, 3500];
 		var currentFrame = 0;
 		var imgs = [];
 		var parentW;
@@ -86,7 +87,7 @@
 			function () {
 				setTimeout(function() {
 					$('#f1').fadeOut(2500);
-				}, 1000);
+				}, 700);
 			},
 			//frame 2
 			function () {
@@ -105,15 +106,15 @@
 							var upper = $(that).parent('.row').hasClass('upper');	
 							if(upper ){							
 							 	xpos = ( (that.width() * d) / parentW ) * 100 ;						
-								that.delay(500 * d).animate({left: xpos+'%'});
+								that.delay(400 * d).animate({left: xpos+'%'});
 								d++;
 
 							}else{
 								xpos = ( (that.width() * r) / parentW ) * 100 ;	
-								that.delay(500 * r).animate({ right: xpos+'%' });
+								that.delay(400 * r).animate({ right: xpos+'%' });
 								r++;
 							}
-						}, 1000 * d);
+						}, 700 * d);
 					}
 
 				});	
@@ -122,7 +123,7 @@
 			//frame 3
 			function () {
 				setTimeout(function() {
-					$('#f3  .photo').addClass('anim');
+					$('#f3 .photo').addClass('anim');
 					setTimeout(function() {
 						$('#f3 .copy').fadeIn(100);
 					}, 200);
@@ -131,7 +132,7 @@
 			//frame 4
 			function () {
 				setTimeout(function() {
-					$('#f3, #f2').addClass('fade');
+					$('#f3, #f2').fadeOut(500);
 				}, 500);
 				
 				$('#f4').delay(500).fadeIn(1000);
@@ -201,12 +202,12 @@
 		};
 		$(document).ready(function(){
 			changeFrame();
-			$('.link a').on('click',function(e){
+			$('.link').on('click', 'a', function(e){
 				e.preventDefault();
-				
 				$('.video-container').show();
 
-				currentVideo = $(e.currentTarget).data('id');
+				currentVideo = $(e.target).data('id');
+			
 				brightcove.createExperiences();
 
 				$('.close').show().off().on('click', function(e){
@@ -216,10 +217,16 @@
 				});
 			});
 			$( window ).resize(function() {
-				waitForFinalEvent(function(){
-					$('#f2 .upper, #f2 .bottom').empty();
-					frames[1]();
-				}, 500, "some unique string");
+				if(currentFrame == 2 &&  !(times[currentFrame] === 3500)){
+
+					waitForFinalEvent(function(){
+						$('#f2 .upper, #f2 .bottom').empty();
+						frames[1]();
+					}, 10, "some unique string");
+				}else{
+					return;
+				}
+
 			});
 		});
 	</script>

@@ -28,9 +28,9 @@
 		<div class="frames f4 hide" id="f4">
 			<div class="tagline"><img src="img/f1-tagline.png" alt="" width="392"/></div>
 			<div class="vid-container">
-				<div class="vid-large link"><a href="#" data-id="2757409367001"></a></div>
-				<div class="vid-small link"><a href="#" data-id="2757389883001"></a></div>
-				<div class="vid-small link"><a href="#" data-id="2757409370001"></a></div>
+				<div class="vid-large link"><a href="#" class="ixtrack"  data-ix-category="internal" data-ix-label="Nigel video" data-id="2757409367001"></a></div>
+				<div class="vid-small link"><a href="#" class="ixtrack"  data-ix-category="internal" data-ix-label="Barbara video" data-id="2757389883001"></a></div>
+				<div class="vid-small link"><a href="#"  class="ixtrack"  data-ix-category="internal" data-ix-label="Nadia video" data-id="2757409370001"></a></div>
 			</div>
 			<div class="logo"><img src="img/logo.png" width="368" alt="" /></div>
 			<a class="close ixtrack" data-ix-category="internal" data-ix-label="close video" >&#215;</a>
@@ -86,14 +86,14 @@
 						var upper = $(that).parent('.row').hasClass('upper');	
 						if(upper){							
 						 	xpos = that.width() * d;						
-							that.delay(100 * d).animate({left: xpos});
+							that.delay(300 * d).animate({left: xpos});
 							d++;
 						}else{
 							xpos = that.width() * r;
-							that.delay(1000 * r).animate({ left: xpos });
+							that.delay(300 * r).animate({ right: xpos });
 							r++;
 						}
-					}, 1000 * d);
+					}, 500 * d);
 				});	
 				$('#f3').show();
 			},
@@ -101,11 +101,13 @@
 			function () {	
 				setTimeout(function() {
 					$('#f3 .photo').addClass('anim');
+
 				}, 500);			
 			 },
 			//frame 4
 			function () {
-				$('.f3, .f2').addClass('fade');
+			
+				$('.f3, .f2').fadeOut(100);
 				$('#f4').fadeIn(500);
 			}
 		];
@@ -164,11 +166,8 @@
 			$('.link a').on('click',function(e){
 				e.preventDefault();
 				$('.video-container').show();
-
 				currentVideo = $(e.currentTarget).data('id');
-				
 				brightcove.createExperiences();
-
 				$('.close').show().off().on('click', function(e){
 					e.preventDefault();
 					$('.video-container').hide();
