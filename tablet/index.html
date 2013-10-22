@@ -140,6 +140,11 @@
 					videoDTO.displayName = "";
 					contentModule.updateMedia(videoDTO, function(newVideoDTO) {
 						videoPlayer.play();
+						$('.close').show().off().on('click', function(e){
+							e.preventDefault();
+							$('.video-container').hide();
+							$(this).toggle();
+						});
 					});
 				}
 			});
@@ -171,12 +176,6 @@
 				currentVideo = $(e.currentTarget).data('id');
 				$('.video-container').html(addPlayer(currentVideo));
 				brightcove.createExperiences();
-
-				$('.close').show().off().on('click', function(e){
-					e.preventDefault();
-					$('.video-container').hide();
-					$(this).toggle();
-				});
 			});
 			
 		});
