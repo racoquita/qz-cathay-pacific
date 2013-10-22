@@ -86,18 +86,12 @@ img{
 			&.bottom{
 				position:relative;
 				div{
-					// &.r2-6, &.r2-5, &.r2-4{
-					// 	right:100%;
-					// } 
 					right: 100%;
 				}
 			}
 			&.upper{
 				div{
-					// &.r1-1, &.r1-2, &.r1-3{
-					// 	right:100%;
-					// } 
-					left:-100%;
+					left:100%;
 				}
 			}
 		}

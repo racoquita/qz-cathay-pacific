@@ -185,7 +185,7 @@ img {
 .frames.f3.fade {
   opacity: 0;
   -webkit-animation: fade 0.75s forwards;
-  -moz-animation: fade 0.75s forwars;
+  -moz-animation: fade 0.75s forwards;
   -o-animation: fade 0.75s forwards;
   animation: fade 0.75s forwards;
 }

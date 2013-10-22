@@ -124,7 +124,7 @@ img {
   right: 100%;
 }
 .frames.f2 .row.upper div {
-  left: -100%;
+  left: 100%;
 }
 .frames.f2.fade {
   opacity: 0;
