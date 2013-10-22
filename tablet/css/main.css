@@ -162,8 +162,9 @@ img {
   bottom: 275px;
   overflow: hidden;
   -webkit-transition: all .75s ease;
-  -moz-transition: all .5s ease;
-  -o-transition: all .5s ease;
+  -moz-transition: all .75s ease;
+  -o-transition: all .75s ease;
+  -ms-transition: all .75s ease;
   transition: all .75s ease;
 }
 .frames.f3 .photo img {
@@ -251,10 +252,10 @@ img {
 }
 .frames.f4 .video-container {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
   display: none;
 }
 .frames.f4 #myExperience {
@@ -262,7 +263,7 @@ img {
   height: 100%;
 }
 .frames.f4 .close {
-  display: block;
+  display: inline-block;
   vertical-align: middle;
   cursor: pointer;
   position: absolute;

@@ -63,7 +63,7 @@
 	<script type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
 	<script type="text/javascript">
 		var currentVideo = '';
-		var times=[2500, 2500, 3000];
+		var times=[3000, 3000, 3500];
 		var currentFrame = 0;
 		var imgs = [];
 		var frames = [
@@ -86,14 +86,14 @@
 						var upper = $(that).parent('.row').hasClass('upper');	
 						if(upper){							
 						 	xpos = that.width() * d;						
-							that.delay(200 * d).animate({left: xpos}, 10);
+							that.delay(100 * d).animate({left: xpos});
 							d++;
 						}else{
 							xpos = that.width() * r;
-							that.delay(200 * r).animate({ left: xpos }, 10)
+							that.delay(1000 * r).animate({ left: xpos });
 							r++;
 						}
-					}, 300 * d);
+					}, 1000 * d);
 				});	
 				$('#f3').show();
 			},
@@ -166,7 +166,10 @@
 				$('.video-container').show();
 
 				currentVideo = $(e.currentTarget).data('id');
+				
 				brightcove.createExperiences();
+
+				
 
 				$('.close').show().off().on('click', function(e){
 					e.preventDefault();

@@ -38,8 +38,6 @@ img{
 	height:480px;
 	position:relative;
 	background:  url(../img/f1-bg.jpg) 0 0 no-repeat;
-
-
 }
 .frames{
 	position:absolute;
@@ -81,19 +79,24 @@ img{
 						 transition: all .5s ease;
 			}
 			.thumb{
-				display: inline-block;
+				display: block;
 				height:100%;
 				min-width: 183px;
 			}
-			&.upper{
+			&.bottom{
 				position:relative;
 				div{
-					
-					left:100%;
+					// &.r2-6, &.r2-5, &.r2-4{
+					// 	right:100%;
+					// } 
+					right: 100%;
 				}
 			}
-			&.bottom{
+			&.upper{
 				div{
+					// &.r1-1, &.r1-2, &.r1-3{
+					// 	right:100%;
+					// } 
 					left:-100%;
 				}
 			}
@@ -101,17 +104,17 @@ img{
 		&.fade{
 			opacity: 0;
 			-webkit-animation: fade 0.3s forwards;
-			-moz-animation:fade 0.3s forwards;
-			-o-animation: fade 0.3s forwards;
-					animation: fade 0.3s forwards;
+				-moz-animation:fade 0.3s forwards;
+				 -o-animation: fade 0.3s forwards;
+				    animation: fade 0.3s forwards;
 		}
 	}
 	&.f3{
 		opacity: 1;
-	   -webkit-transition: opacity .5s ease;
-	   	   -moz-transition: opacity .5s ease;
-	   	    	-o-transition: opacity .5s ease;
-	   	   	    transition: opacity .5s ease;
+	   -webkit-transition: opacity .75s ease;
+	   	   -moz-transition: opacity .75s ease;
+	   	    	-o-transition: opacity .75s ease;
+	   	   	    transition: opacity .75s ease;
 		.photo{
 			position: absolute;
 			top:0;
@@ -121,7 +124,7 @@ img{
 			overflow: hidden;
 			  -webkit-transition: all 1s ease;
  				 -moz-transition: all 1s ease;
- 			 	   -o-transition: all .75s ease;
+ 			 	   -o-transition: all 1s ease;
   					 transition: all 1s ease;
 			img{
 				opacity: 0;
@@ -150,10 +153,10 @@ img{
 		}
 		&.fade{
 			opacity: 0;
-			-webkit-animation: fade 0.3s forwards;
-			-moz-animation: fade 0.3s forwards;
-			-o-animation:fade 0.3s forwards;
-			animation: fade 0.3s forwards;
+			-webkit-animation: fade 1s forwards;
+			-moz-animation: fade 1s forwards;
+			-o-animation:fade 1s forwards;
+			animation: fade 1s forwards;
 		}
 	}
 	&.f4{
@@ -217,7 +220,7 @@ img{
 		}
 		.logo{
 			position:inherit;
-			margin: 120px auto 0 auto;
+			margin: 136px auto 0 auto;
 			width: 33.4545454545%;
 			min-width: 326px;
 			bottom:18px;
@@ -229,20 +232,8 @@ img{
 			width: 28.6363636364%;
 			min-width: 229px;
 		}
-		.video-container {
-		  position: absolute;
-		  top: 0;
-		  bottom: 0;
-		  left: 0;
-		  right: 0;
-		  display: none;
-		}
-		#myExperience {
-		  width: 100%;
-		  height: 100%;
-		}
 		.close {
-		  
+		  display: block;
 		  vertical-align: middle;
 		  cursor: pointer;
 		  position: absolute;
@@ -257,6 +248,21 @@ img{
 		  right: 0;
 		  display: none;
 		}
+	}
+	.video-container {
+		  position: absolute;
+		  top: 0;
+		  bottom: 0;
+		  left: 0;
+		  right: 0;
+		  display: none;
+		  span{
+		  	display: block;
+		  }
+	}
+	#myExperience {
+		  width: 100%;
+		  height: 100%;
 	}
 }
 @media screen  and (max-width: 1000px) and (min-width: 871px) {
@@ -318,6 +324,37 @@ img{
 						display: inline-block;
 						width: 100%;
 						height:100%;
+					}
+				}
+			}
+		}
+		&#f3{
+			.photo{
+				position: absolute;
+				top:0;
+				right: 0;
+				left: 83%;
+				bottom:240px;
+				overflow: hidden;
+				  -webkit-transition: all 1s ease;
+	 				 -moz-transition: all 1s ease;
+	 			 	   -o-transition: all .75s ease;
+	  					 transition: all 1s ease;
+				img{
+					opacity: 0;
+					height: 97%;
+					width: auto;
+					margin-left: -25px;
+					margin-top: -9px;
+				}
+				&.anim{
+					left:24.9%;
+					bottom:0;
+					img{
+						height: 100%;
+						opacity: 1;
+						margin-left: 0;
+						margin-top: 0;
 					}
 				}
 			}
