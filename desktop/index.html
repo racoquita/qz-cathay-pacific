@@ -100,14 +100,12 @@
 					if(animating){
 						return
 					}else{
-
 						setTimeout(function() {
 							animating = true;
-							var upper = $(that).parent('.row').hasClass('upper');
-							var right = $(that).hasClass('left');	
+							var upper = $(that).parent('.row').hasClass('upper');	
 							if(upper ){							
 							 	xpos = ( (that.width() * d) / parentW ) * 100 ;						
-								that.delay(500 * d).animate({right: xpos+'%'});
+								that.delay(500 * d).animate({left: xpos+'%'});
 								d++;
 
 							}else{

@@ -1,4 +1,3 @@
-
 a{
 	outline: 0;
 	border:0;
@@ -9,9 +8,8 @@ img{
 	width:100%;
 	border:0;
 }
-.hide{
-	display:none;
-}
+.hide{ display:none; }
+
 @keyframes fade {
   0% {opacity: 1;}
   100% {opacity: 0;}
@@ -75,7 +73,7 @@ img{
 				height: 240px;
 				 -webkit-transition: all .5s ease;
 				 	-moz-transition: all .5s ease;
-				 	 -o-transition: all .5s ease;
+				 	  -o-transition: all .5s ease;
 						 transition: all .5s ease;
 			}
 			.thumb{
@@ -84,30 +82,26 @@ img{
 				min-width: 183px;
 			}
 			&.bottom{
-				position:relative;
-				div{
-					right: 100%;
-				}
+				//position:relative;
+				div{ right: 100%; }
 			}
 			&.upper{
-				div{
-					left:100%;
-				}
+				div{ left:100%; }
 			}
 		}
 		&.fade{
 			opacity: 0;
-			-webkit-animation: fade 0.3s forwards;
-				-moz-animation:fade 0.3s forwards;
-				 -o-animation: fade 0.3s forwards;
-				    animation: fade 0.3s forwards;
+			-webkit-animation: fade .75s forwards;
+				-moz-animation:fade .75s forwards;
+				 -o-animation: fade .75s forwards;
+				    animation: fade .75s forwards;
 		}
 	}
 	&.f3{
 		opacity: 1;
-	   -webkit-transition: opacity .75s ease;
+	    -webkit-transition: opacity .75s ease;
 	   	   -moz-transition: opacity .75s ease;
-	   	    	-o-transition: opacity .75s ease;
+	   	     -o-transition: opacity .75s ease;
 	   	   	    transition: opacity .75s ease;
 		.photo{
 			position: absolute;
@@ -119,7 +113,7 @@ img{
 			  -webkit-transition: all 1s ease;
  				 -moz-transition: all 1s ease;
  			 	   -o-transition: all 1s ease;
-  					 transition: all 1s ease;
+  					  transition: all 1s ease;
 			img{
 				opacity: 0;
 				height: 97%;
