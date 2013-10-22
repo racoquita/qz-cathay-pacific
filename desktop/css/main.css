@@ -23,7 +23,6 @@ img {
     opacity: 0;
   }
 }
-
 @-webkit-keyframes fade {
   0% {
     opacity: 1;
@@ -70,6 +69,37 @@ img {
   height: 480px;
   position: relative;
   background: url(../img/f1-bg.jpg) 0 0 no-repeat;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+}
+
+#myExperience {
+  width: 100%;
+  height: 100%;
+}
+
+.close {
+  display: block;
+  vertical-align: middle;
+  cursor: pointer;
+  position: absolute;
+  z-index: 102;
+  background-color: black;
+  color: white;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  top: 0;
+  right: 0;
+  display: none;
 }
 
 .frames {
@@ -132,10 +162,12 @@ img {
 }
 .frames.f3 {
   opacity: 1;
-  -webkit-transition: opacity .75s ease;
-  -moz-transition: opacity .75s ease;
-  -o-transition: opacity .75s ease;
-  transition: opacity .75s ease;
+}
+.frames.f3 div {
+  -webkit-transition: opacity .5s ease;
+  -moz-transition: opacity .5s ease;
+  -o-transition: opacity .5s ease;
+  transition: opacity .5s ease;
 }
 .frames.f3 .photo {
   position: absolute;
@@ -144,10 +176,10 @@ img {
   left: 83%;
   bottom: 240px;
   overflow: hidden;
-  -webkit-transition: all .7s ease;
-  -moz-transition: all .7s ease;
-  -o-transition: all .7s ease;
-  transition: all .7s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
 }
 .frames.f3 .photo img {
   opacity: 0;
@@ -189,6 +221,7 @@ img {
   top: 45px;
   width: 45.0909090909%;
   min-width: 554px;
+  max-width: 496px;
 }
 .frames.f4 .vid-container {
   position: relative;
@@ -199,7 +232,7 @@ img {
   top: 72px;
 }
 .frames.f4 .vid-container a {
-  display: inline-block;
+  display: block;
   width: 100%;
   height: 100%;
   border: 0;
@@ -211,7 +244,7 @@ img {
 }
 .frames.f4 .vid-large a {
   background: url(../img/f4-playSymbol.png) center center no-repeat, url(../img/f4-thumb-video-large.jpg) 0 0 no-repeat;
-  background-size: 50%, 100%;
+  background-size: 133px, 100%;
   background-origin: 50% 50%;
 }
 .frames.f4 .vid-small {
@@ -223,7 +256,7 @@ img {
 }
 .frames.f4 .vid-small a {
   background: url(../img/f4-playSymbol-small.png) center center no-repeat, url(../img/f4-thumb-small.jpg) 0 0 no-repeat;
-  background-size: 50%, 100%;
+  background-size: 65px, 100%;
   background-origin: 50% 50%;
 }
 .frames.f4 .vid-small:last-child {
@@ -231,7 +264,7 @@ img {
 }
 .frames.f4 .vid-small:last-child a {
   background: url(../img/f4-playSymbol-small.png) center center no-repeat, url(../img/f4-thumb-small-bottom.jpg) 0 0 no-repeat;
-  background-size: 50%, 100%;
+  background-size: 65px, 100%;
   background-origin: 50% 50%;
 }
 .frames.f4 .logo {
@@ -247,37 +280,6 @@ img {
   bottom: 26px;
   width: 28.6363636364%;
   min-width: 229px;
-}
-.frames.f4 .close {
-  display: block;
-  vertical-align: middle;
-  cursor: pointer;
-  position: absolute;
-  z-index: 102;
-  background-color: black;
-  color: white;
-  text-align: center;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  top: 0;
-  right: 0;
-  display: none;
-}
-.frames .video-container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: none;
-}
-.frames .video-container span {
-  display: block;
-}
-.frames #myExperience {
-  width: 100%;
-  height: 100%;
 }
 
 @media screen and (max-width: 1000px) and (min-width: 871px) {

@@ -36,8 +36,9 @@
 			</div>
 			<div class="logo"><img src="img/logo.png" width="368" alt="Cathay Pacific Logo" /></div>
 			<div class="cta"><a class="ixtrack" data-ix-category="external"  data-ix-label="Link to site" href="http://people.cathaypacific.com/people/en/home"><img src="img/cta.png" alt="315"></a></div>
-			
-			<div class="video-container">
+			<a class="close ixtrack" data-ix-category="internal" data-ix-label="close video" >&#215;</a>
+		</div>
+		<div class="video-container">
 				<object id="myExperience" class="BrightcoveExperience">
 					<param name="bgcolor" value="#FFFFFF" />
 					<param name="width" value="" />
@@ -52,8 +53,6 @@
 					<param name="templateReadyHandler" value="onTemplateReady" />
 					<param name="@videoPlayer" value="" />
 				</object>
-			</div>
-			<a class="close ixtrack" data-ix-category="internal" data-ix-label="close video" >&#215;</a>
 		</div>
 	</div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
@@ -79,15 +78,15 @@
 			};
 		})();
 		var currentVideo = '';
-		var times=[3000, 3000, 3500];
+		var times=[2000, 2000, 3500];
 		var currentFrame = 0;
 		var imgs = [];
 		var parentW;
 		var frames = [
 			function () {
 				setTimeout(function() {
-					$('#f1').fadeOut(2500);
-				}, 700);
+					$('#f1').fadeOut(1000);
+				}, 750);
 			},
 			//frame 2
 			function () {
@@ -106,15 +105,15 @@
 							var upper = $(that).parent('.row').hasClass('upper');	
 							if(upper ){							
 							 	xpos = ( (that.width() * d) / parentW ) * 100 ;						
-								that.delay(400 * d).animate({left: xpos+'%'});
+								that.delay(200 * d).animate({left: xpos+'%'});
 								d++;
 
 							}else{
 								xpos = ( (that.width() * r) / parentW ) * 100 ;	
-								that.delay(400 * r).animate({ right: xpos+'%' });
+								that.delay(200 * r).animate({ right: xpos+'%' });
 								r++;
 							}
-						}, 700 * d);
+						}, 100 * d);
 					}
 
 				});	
@@ -127,15 +126,17 @@
 					setTimeout(function() {
 						$('#f3 .copy').fadeIn(100);
 					}, 200);
-				}, 2000);		
+				}, 550);		
 			 },
 			//frame 4
 			function () {
+				
 				setTimeout(function() {
-					$('#f3, #f2').fadeOut(500);
+					$('.f3').fadeOut(1000);
+					$('.f2').fadeOut(900);
+					$('#f4').delay(50).fadeIn(1000);
 				}, 500);
 				
-				$('#f4').delay(500).fadeIn(1000);
 			}
 		];
 		onTemplateLoad = function(experienceID){
