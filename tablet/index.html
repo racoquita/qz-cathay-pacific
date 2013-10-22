@@ -142,7 +142,7 @@
 						videoPlayer.play();
 						$('.close').show().off().on('click', function(e){
 							e.preventDefault();
-							$('.video-container').hide();
+							removePlayer();
 							$(this).toggle();
 						});
 					});
@@ -151,6 +151,11 @@
 		};
 		mediaEventCompleteHandler = function(){
 			$('.close').trigger('click');
+		};
+		removePlayer = function() {
+			/* Remove the BC video player object, hide the container */
+			$('#myExperience').remove();
+			$('.video-container').empty().hide();
 		};
 		addPlayer = function(vid){
 			return '<object id="myExperience" class="BrightcoveExperience">' +
