@@ -94,54 +94,27 @@
 				/*$('#f2').show();*/
 				$('#f2 .upper').append(addThumbs()[0]);
 				$('#f2 .bottom').append(addThumbs()[1]);
-
 				$('.f2').addClass('show');
-
-				/*var d = 0, r=0, xpos, animating = false;
-				$('.row div').each(function () {
-					var that = $(this);
-					parentW = $('.row').width();
-					if(animating){
-						return
-					}else{
-						setTimeout(function() {
-							animating = true;
-							var upper = $(that).parent('.row').hasClass('upper');	
-							if(upper ){							
-							 	xpos = ( (that.width() * d) / parentW ) * 100 ;						
-								that.delay(200 * d).animate({left: xpos+'%'});
-								d++;
-
-							}else{
-								xpos = ( (that.width() * r) / parentW ) * 100 ;	
-								that.delay(200 * r).animate({ right: xpos+0.09+'%' });
-								r++;
-							}
-						}, 100 * d);
-					}
-
-				});	
-				$('#f3').show();*/
+				
+				$('#f3').show();
 			},
 			//frame 3
-			/*function () {
+			function () {
 				setTimeout(function() {
 					$('#f3 .photo').addClass('anim');
 					setTimeout(function() {
 						$('#f3 .copy').fadeIn(100);
 					}, 200);
 				}, 550);		
-			 },*/
+			 },
 			//frame 4
-			/*function () {
-				
+			function () {
+				$('.f2').fadeOut(900);
 				setTimeout(function() {
-					$('.f3').fadeOut(1000);
-					$('.f2').fadeOut(900);
+					$('#f3').fadeOut(1000);
 					$('#f4').delay(50).fadeIn(1000);
 				}, 500);
-				
-			}*/
+			}
 		];
 		onTemplateLoad = function(experienceID){
 			player = brightcove.api.getExperience(experienceID);
@@ -219,18 +192,6 @@
 					$('.video-container').hide();
 					$(this).toggle();
 				});
-			});
-			$( window ).resize(function() {
-				/*if(currentFrame == 2 &&  !(times[currentFrame] === 3500)){
-
-					waitForFinalEvent(function(){
-						$('#f2 .upper, #f2 .bottom').empty();
-						frames[1]();
-					}, 10, "some unique string");
-				}else{
-					return;
-				}*/
-
 			});
 		});
 	</script>
