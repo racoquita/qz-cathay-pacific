@@ -48,7 +48,7 @@
 	<script type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
 	<script type="text/javascript">
 		var currentVideo = '';
-		var times=[2000, 1500, 3500];
+		var times=[2000, 2000, 3500];
 		var currentFrame = 0;
 		var imgs = [];
 		var frames = [
@@ -61,44 +61,47 @@
 			//frame 2
 			function () {
 				
-				$('#f2').fadeIn(100);
+				$('#f2').show();
 				$('#f2 .upper').append(addThumbs()[0]);
 				$('#f2 .bottom').append(addThumbs()[1]);
 				var d = 0, r =0;
 				var xpos;
 				$('.row div').each(function () {
-					var that = $(this);
-					setTimeout(function() {
-						var upper = $(that).parent('.row').hasClass('upper');	
-						if(upper){							
-						 	xpos = that.width() * d;						
-							that.delay(150 * d).animate({left: xpos});
-							d++;
-						}else{
-							xpos = that.width() * r;
-							that.delay(150 * r).animate({ right: xpos });
-							r++;
-						}
-					}, 50 * d);
+					var that = $(this);						
+					var upper = $(that).parent('.row').hasClass('upper');
+
+					if(upper){							
+					 	xpos = that.width() * d;						
+						that.delay(150 * d).animate({left: xpos}, 0,'ease-out');
+						d++;
+					}else{
+						xpos = that.width() * r;
+						that.delay(150 * r).animate({ right: xpos }, 0, 'ease-out');
+						r++;
+					}
 				});
 				$('#f3').show();
 			},
 
 			//frame 3
-			/*function () {	
+			function () {	
 				setTimeout(function() {
-					$('#f3 .photo').addClass('anim');
-				}, 550);			
-			},*/
+					$('.r1-3').addClass('anim');
+
+					setTimeout(function(){
+						$('.r1-3 .thumb').attr('src','img/f2-r1-thumb3-text.jpg');
+					}, 1000);
+				}, 1000);			
+			},
 
 			//frame 4
-			/*function () {
+			function () {
 				setTimeout(function() {
 					$('.f3').fadeOut(1000);
 					$('.f2').fadeOut(900);
 					$('#f4').delay(50).fadeIn(1000);
 				}, 500);
-			}*/
+			}
 		];
 
 		function changeFrame () {

@@ -1,83 +1,61 @@
 img {
   display: block;
   width: 100%;
-  border: none;
-}
+  border: none; }
 
 @keyframes fade {
   0% {
-    opacity: 1;
-  }
+    opacity: 1; }
 
   100% {
-    opacity: 0;
-  }
-}
+    opacity: 0; } }
 
 @-webkit-keyframes fade {
   0% {
-    opacity: 1;
-  }
+    opacity: 1; }
 
   100% {
-    opacity: 0;
-  }
-}
+    opacity: 0; } }
 
 @-moz-keyframes fade {
   0% {
-    opacity: 1;
-  }
+    opacity: 1; }
 
   100% {
-    opacity: 0;
-  }
-}
+    opacity: 0; } }
 
 @-o-keyframes fade {
   0% {
-    opacity: 1;
-  }
+    opacity: 1; }
 
   100% {
-    opacity: 0;
-  }
-}
+    opacity: 0; } }
 
 @keyframes fade {
   0% {
-    opacity: 1;
-  }
+    opacity: 1; }
 
   100% {
-    opacity: 0;
-  }
-}
+    opacity: 0; } }
 
 @keyframes fade-in {
   0% {
-    opacity: 0;
-  }
+    opacity: 0; }
 
   100% {
-    opacity: 1;
-  }
-}
+    opacity: 1; } }
 
 .hide {
-  display: none;
-}
+  display: none; }
 
 #qzad {
   width: 480px;
   height: 550px;
   position: relative;
-  background: url(../img/f1-bg.jpg) 0 0 no-repeat;
-}
-#qzad a {
-  border: 0;
-  text-decoration: none;
-}
+  background: url(../img/f1-bg.jpg) 0 0 no-repeat; }
+  #qzad a {
+    border: 0;
+    text-decoration: none; }
 
 .video-container {
   position: absolute;
@@ -85,13 +63,11 @@ img {
   bottom: 0px;
   left: 0px;
   right: 0px;
-  display: none;
-}
+  display: none; }
 
 #myExperience {
   width: 100%;
-  height: 510px;
-}
+  height: 510px; }
 
 .close {
   display: block;
@@ -108,172 +84,178 @@ img {
   line-height: 40px;
   top: 0;
   right: 0;
-  display: none;
-}
+  display: none; }
 
 .frames {
   position: absolute;
   width: 100%;
   top: 0;
   bottom: 0;
-  height: 550px;
-}
-.frames.hide {
-  display: none;
-}
-.frames.f1 .tagline {
-  margin: 230px auto 0 auto;
-  width: 390px;
-}
-.frames.f1 .logo {
-  width: 300px;
-  margin: 228px auto 0 auto;
-}
-.frames.f2 {
-  height: 100%;
-}
-.frames.f2 .row {
-  position: relative;
-  left: 0;
-  overflow: hidden;
-  width: 480px;
-  height: 275px;
-}
-.frames.f2 .row div {
-  position: absolute;
-  top: 0;
-  width: 160px;
-  height: 275px;
-  -webkit-transition: all .5s ease;
-  -moz-transition: all .5s ease;
-  -o-transition: all .5s ease;
-  transition: all .5s ease;
-}
-.frames.f2 .row div.f2-r1-thumb3 img {
-  margin-left: -25px;
-  width: 480px;
-  height: 550px;
-  margin-top: -5px;
-  opacity: 0;
-}
-.frames.f2 .row .thumb {
-  display: block;
-  height: 100%;
-}
-.frames.f2 .row.upper div {
-  left: 480px;
-}
-.frames.f2 .row.bottom div {
-  right: 480px;
-}
-.frames.f2.fade {
-  opacity: 0;
-  -webkit-animation: fade 0.3s forwards;
-  -moz-animation: fade 0.3s forwards;
-  -o-animation: fade 0.3s forwards;
-  animation: fade 0.3s forwards;
-}
-.frames.f3 {
-  opacity: 1;
-}
-.frames.f3 div {
-  -webkit-transition: opacity .5s ease;
-  -moz-transition: opacity .5s ease;
-  -o-transition: opacity .5s ease;
-  transition: opacity .5s ease;
-}
-.frames.f3 .photo {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 323px;
-  bottom: 275px;
-  overflow: hidden;
-  -webkit-transition: all .5s ease;
-  -moz-transition: all .5s ease;
-  -o-transition: all .5s ease;
-  transition: all .5s ease;
-}
-.frames.f3 .photo img {
-  opacity: 0;
-  height: 124%;
-  width: auto;
-  margin-left: -17px;
-}
-.frames.f3 .photo.anim {
-  left: 0;
-  bottom: 0;
-}
-.frames.f3 .photo.anim img {
-  height: 100%;
-  margin-left: 0;
-  opacity: 1;
-}
-.frames.f3.fade {
-  opacity: 0;
-  -webkit-animation: fade 0.75s forwards;
-  -moz-animation: fade 0.75s forwards;
-  -o-animation: fade 0.75s forwards;
-  animation: fade 0.75s forwards;
-}
-.frames.f4 {
-  position: relative;
-  opacity: 1;
-}
-.frames.f4.fade-in {
-  opacity: 0;
-  -webkit-animation: fade-in 0.85s ease;
-  -moz-animation: fade-in 0.85s ease;
-  -o-animation: fade-in 0.85s ease;
-  animation: fade-in 0.85s ease;
-}
-.frames.f4 .tagline {
-  position: inherit;
-  margin: 0 auto;
-  top: 45px;
-  width: 392px;
-}
-.frames.f4 .vid-container {
-  position: relative;
-  width: 370px;
-  height: 322px;
-  margin: 0 auto;
-  top: 72px;
-}
-.frames.f4 .vid-container a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-.frames.f4 .vid-large {
-  height: 206px;
-  width: 370px;
-}
-.frames.f4 .vid-large a {
-  background: url(../img/f4-playSymbol.png) center center no-repeat, url(../img/f4-thumb-video-large.jpg) 0 0 no-repeat;
-  background-origin: 50% 50%;
-}
-.frames.f4 .vid-small {
-  position: absolute;
-  top: 223px;
-  width: 175px;
-  height: 100px;
-}
-.frames.f4 .vid-small a {
-  background: url(../img/f4-playSymbol-small.png) center center no-repeat, url(../img/f4-thumb-video-small.jpg) 0 0 no-repeat;
-  background-origin: 50% 50%;
-}
-.frames.f4 .vid-small:last-child {
-  left: 195px;
-}
-.frames.f4 .vid-small:last-child a {
-  background: url(../img/f4-playSymbol-small.png) center center no-repeat, url(../img/f4-thumb-video-small-right.jpg) 0 0 no-repeat;
-  background-origin: 50% 50%;
-}
-.frames.f4 .logo {
-  position: inherit;
-  margin: 143px auto 0 auto;
-  width: 300px;
-  bottom: 18px;
-}
+  height: 550px; }
+  .frames.hide {
+    display: none; }
+  .frames.f1 .tagline {
+    margin: 230px auto 0 auto;
+    width: 390px; }
+  .frames.f1 .logo {
+    width: 300px;
+    margin: 228px auto 0 auto; }
+  .frames.f2 {
+    height: 100%;
+    overflow: hidden; }
+    .frames.f2 .row {
+      position: relative;
+      left: 0;
+      /* overflow: hidden; */
+      width: 480px;
+      height: 275px; }
+      .frames.f2 .row div {
+        position: absolute;
+        top: 0;
+        width: 160px;
+        height: 275px;
+        -webkit-transition: all .5s ease;
+        -moz-transition: all .5s ease;
+        -o-transition: all .5s ease;
+        transition: all .5s ease; }
+        .frames.f2 .row div.f2-r1-thumb3 img {
+          margin-left: -25px;
+          width: 480px;
+          height: 550px;
+          margin-top: -5px;
+          opacity: 0; }
+      .frames.f2 .row .thumb {
+        display: block;
+        height: 100%; }
+      .frames.f2 .row.upper div {
+        left: 480px; }
+      .frames.f2 .row.upper .r1-3 .thumb {
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        -webkit-transform-origin: 0% 0%;
+        -moz-transform-origin: 0% 0%;
+        -ms-transform-origin: 0% 0%;
+        -o-transform-origin: 0% 0%;
+        transform-origin: 0% 0%;
+        -webkit-transform: scale3d(2, 1.3, 0);
+        -moz-transform: scale3d(2, 1.3, 0);
+        -ms-transform: scale3d(2, 1.3, 0);
+        -o-transform: scale3d(2, 1.3, 0);
+        transform: scale3d(2, 1.3, 0); }
+      .frames.f2 .row.upper .r1-3.anim {
+        left: 0 !important;
+        z-index: 101;
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease; }
+        .frames.f2 .row.upper .r1-3.anim .thumb {
+          -webkit-transition: all 1s ease;
+          -moz-transition: all 1s ease;
+          -o-transition: all 1s ease;
+          transition: all 1s ease;
+          -webkit-transform-origin: 0% 0%;
+          -moz-transform-origin: 0% 0%;
+          -ms-transform-origin: 0% 0%;
+          -o-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+          -webkit-transform: scale3d(3, 2, 0);
+          -moz-transform: scale3d(3, 2, 0);
+          -ms-transform: scale3d(3, 2, 0);
+          -o-transform: scale3d(3, 2, 0);
+          transform: scale3d(3, 2, 0); }
+      .frames.f2 .row.bottom div {
+        right: 480px; }
+    .frames.f2.fade {
+      opacity: 0;
+      -webkit-animation: fade 0.3s forwards;
+      -moz-animation: fade 0.3s forwards;
+      -o-animation: fade 0.3s forwards;
+      animation: fade 0.3s forwards; }
+  .frames.f3 {
+    opacity: 1; }
+    .frames.f3 div {
+      -webkit-transition: opacity .5s ease;
+      -moz-transition: opacity .5s ease;
+      -o-transition: opacity .5s ease;
+      transition: opacity .5s ease; }
+    .frames.f3 .photo {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 323px;
+      bottom: 275px;
+      overflow: hidden;
+      -webkit-transition: all 20s ease;
+      -moz-transition: all 20s ease;
+      -o-transition: all 20s ease;
+      transition: all 20s ease; }
+      .frames.f3 .photo img {
+        opacity: 0;
+        height: 124%;
+        width: auto;
+        margin-left: -17px; }
+      .frames.f3 .photo.anim {
+        left: 0;
+        bottom: 0; }
+        .frames.f3 .photo.anim img {
+          height: 100%;
+          margin-left: 0;
+          opacity: 1; }
+    .frames.f3.fade {
+      opacity: 0;
+      -webkit-animation: fade 0.75s forwards;
+      -moz-animation: fade 0.75s forwards;
+      -o-animation: fade 0.75s forwards;
+      animation: fade 0.75s forwards; }
+  .frames.f4 {
+    position: relative;
+    opacity: 1; }
+    .frames.f4.fade-in {
+      opacity: 0;
+      -webkit-animation: fade-in 0.85s ease;
+      -moz-animation: fade-in 0.85s ease;
+      -o-animation: fade-in 0.85s ease;
+      animation: fade-in 0.85s ease; }
+    .frames.f4 .tagline {
+      position: inherit;
+      margin: 0 auto;
+      top: 45px;
+      width: 392px; }
+    .frames.f4 .vid-container {
+      position: relative;
+      width: 370px;
+      height: 322px;
+      margin: 0 auto;
+      top: 72px; }
+      .frames.f4 .vid-container a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 0; }
+    .frames.f4 .vid-large {
+      height: 206px;
+      width: 370px; }
+      .frames.f4 .vid-large a {
+        background: url(../img/f4-playSymbol.png) center center no-repeat, url(../img/f4-thumb-video-large.jpg) 0 0 no-repeat;
+        background-origin: 50% 50%; }
+    .frames.f4 .vid-small {
+      position: absolute;
+      top: 223px;
+      width: 175px;
+      height: 100px; }
+      .frames.f4 .vid-small a {
+        background: url(../img/f4-playSymbol-small.png) center center no-repeat, url(../img/f4-thumb-video-small.jpg) 0 0 no-repeat;
+        background-origin: 50% 50%; }
+      .frames.f4 .vid-small:last-child {
+        left: 195px; }
+        .frames.f4 .vid-small:last-child a {
+          background: url(../img/f4-playSymbol-small.png) center center no-repeat, url(../img/f4-thumb-video-small-right.jpg) 0 0 no-repeat;
+          background-origin: 50% 50%; }
+    .frames.f4 .logo {
+      position: inherit;
+      margin: 143px auto 0 auto;
+      width: 300px;
+      bottom: 18px; }
