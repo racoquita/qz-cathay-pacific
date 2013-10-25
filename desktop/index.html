@@ -113,7 +113,7 @@
 				setTimeout(function() {
 					$('#f3').fadeOut(1000);
 					
-					$('#f4').delay(150).fadeIn(1000);
+					$('#f4').delay(50).fadeIn(1000);
 				}, 500);
 			}
 		];
@@ -193,18 +193,6 @@
 					$('.video-container').hide();
 					$(this).toggle();
 				});
-			});
-			$( window ).resize(function() {
-				/*if(currentFrame == 2 &&  !(times[currentFrame] === 3500)){
-
-					waitForFinalEvent(function(){
-						$('#f2 .upper, #f2 .bottom').empty();
-						frames[1]();
-					}, 10, "some unique string");
-				}else{
-					return;
-				}*/
-
 			});
 		});
 	</script>
