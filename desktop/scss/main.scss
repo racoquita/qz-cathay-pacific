@@ -304,6 +304,7 @@ img{
 			width: 38.7272727273%;
 			transition: all 1s ease;
 		}
+
 		&.fade{
 			opacity: 0;
 			-webkit-animation: fade 1s forwards;
@@ -380,9 +381,9 @@ img{
 		.cta{
 			position:absolute;
 			right: 1.63636363636%;
-			bottom: 26px;
-			width: 28.6363636364%;
-			min-width: 229px;
+			bottom: 18px;
+			width: 17.7272727272%;
+			max-width: 198px;
 		}
 	}
 
