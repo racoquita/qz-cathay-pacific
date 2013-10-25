@@ -275,10 +275,10 @@ img{
 			left: 83%;
 			bottom:240px;
 			overflow: hidden;
-			  -webkit-transition: all .5s ease;
- 				 -moz-transition: all .5s ease;
- 			 	   -o-transition: all .5s ease;
-  					  transition: all .5s ease;
+			  -webkit-transition: all .75s ease;
+ 				 -moz-transition: all .75s ease;
+ 			 	   -o-transition: all .75s ease;
+  					  transition: all .75s ease;
 			img{
 				opacity: 0;
 				height: 97%;
@@ -287,7 +287,7 @@ img{
 				margin-top: -9px;
 			}
 			&.anim{
-				left:32.9%;
+				left: 32.98%;
 				bottom:0;
 				img{
 					height: 100%;
