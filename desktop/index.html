@@ -24,7 +24,7 @@
 			<div class="row bottom"></div>
 		</div>
 		<div class="frames f3 hide" id="f3">
-			<div class="photo"><img src="img/f3-nigel.jpg" alt=""></div>
+			<!-- <div class="photo"><img src="img/f3-nigel.jpg" alt=""></div> -->
 			<div class="copy hide"><img src="img/f3-copy.png" alt="" width="426"></div>
 		</div>
 		<div class="frames f4 hide" id="f4">
@@ -96,16 +96,17 @@
 				$('#f2 .bottom').append(addThumbs()[1]);
 				$('.f2').addClass('show');
 				
-				$('#f3').show();
+				
 			},
 			//frame 3
 			function () {
 				setTimeout(function() {
-					$('#f3 .photo').addClass('anim');
-					setTimeout(function() {
-						$('#f3 .copy').fadeIn(100);
-					}, 200);
-				}, 550);		
+					$('.r1-1').addClass('anim');
+					setTimeout(function(){
+						$('#f3').show();
+						$('#f3 .copy').show();
+					}, 1000);
+				}, 1000);		
 			 },
 			//frame 4
 			function () {

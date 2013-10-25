@@ -126,6 +126,7 @@ img {
 .frames.f2 {
   height: 100%;
   opacity: 0;
+  overflow: hidden;
   -webkit-transition: opacity 1s ease;
   -moz-transition: opacity 1s ease;
   -o-transition: opacity 1s ease;
@@ -147,7 +148,7 @@ img {
 .frames.f2 .row {
   position: relative;
   left: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   width: 100%;
   height: 240px;
 }
@@ -252,6 +253,46 @@ img {
 }
 .frames.f2 .row.upper div.r1-1 {
   left: 83%;
+}
+.frames.f2 .row.upper div.r1-1 .thumb {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-transform-origin: 0% 0%;
+  -moz-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  -o-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+  -webkit-transform: scale3d(2, 1, 0);
+  -moz-transform: scale3d(2, 1, 0);
+  -ms-transform: scale3d(2, 1, 0);
+  -o-transform: scale3d(2, 1, 0);
+  transform: scale3d(2, 1, 0);
+}
+.frames.f2 .row.upper div.r1-1.anim {
+  left: 33.5% !important;
+  z-index: 101;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.frames.f2 .row.upper div.r1-1.anim .thumb {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-transform-origin: 0% 0%;
+  -moz-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  -o-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+  -webkit-transform: scale3d(4, 2, 0);
+  -moz-transform: scale3d(4, 2, 0);
+  -ms-transform: scale3d(4, 2, 0);
+  -o-transform: scale3d(4, 2, 0);
+  transform: scale3d(4, 2, 0);
 }
 @media screen and (max-width: 732px) {
   .frames.f2 .row.upper div.r1-1 {
@@ -375,6 +416,7 @@ img {
   top: 23px;
   width: 38.7272727273%;
   transition: all 1s ease;
+  z-index: 201;
 }
 .frames.f3.fade {
   opacity: 0;
