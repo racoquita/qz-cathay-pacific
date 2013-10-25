@@ -57,6 +57,7 @@
 					$('#f1').fadeOut(1000);
 				}, 750);
 			},
+
 			//frame 2
 			function () {
 				
@@ -79,24 +80,27 @@
 							r++;
 						}
 					}, 50 * d);
-				});	
+				});
 				$('#f3').show();
 			},
+
 			//frame 3
-			function () {	
+			/*function () {	
 				setTimeout(function() {
 					$('#f3 .photo').addClass('anim');
 				}, 550);			
-			 },
+			},*/
+
 			//frame 4
-			function () {
+			/*function () {
 				setTimeout(function() {
 					$('.f3').fadeOut(1000);
 					$('.f2').fadeOut(900);
 					$('#f4').delay(50).fadeIn(1000);
 				}, 500);
-			}
+			}*/
 		];
+
 		function changeFrame () {
 			if($.isFunction(frames[currentFrame])) {
 				frames[currentFrame]();
