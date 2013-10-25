@@ -23,7 +23,7 @@
 			</div>
 		</div>
 		<div class="frames f3 hide" id="f3">
-			<div class="photo"><img src="img/f3-nigel.jpg" alt=""></div>
+			<!-- <div class="photo"><img src="img/f3-nigel.jpg" alt=""></div> -->
 		</div>
 		<div class="frames f4 hide" id="f4">
 			<div class="tagline"><img src="img/f1-tagline.png" alt="" width="392"/></div>
@@ -48,13 +48,13 @@
 	<script type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
 	<script type="text/javascript">
 		var currentVideo = '';
-		var times=[2000, 2000, 3500];
+		var times=[3000, 1500, 5000];
 		var currentFrame = 0;
 		var imgs = [];
 		var frames = [
 			function () {
 				setTimeout(function() {
-					$('#f1').fadeOut(1000);
+					$('#f1').fadeOut(2000);
 				}, 750);
 			},
 
