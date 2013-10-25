@@ -18,7 +18,7 @@
 			<div class="tagline"><img src="img/f1-tagline.png" alt=""/></div>
 			<div class="logo"><img src="img/logo.png" alt="" /></div>
 		</div>
-		<div class="frames f2 hide" id="f2">
+		<div class="frames f2" id="f2">
 			<div class="row upper"></div>
 			<div class="row bottom"></div>
 		</div>
@@ -90,10 +90,13 @@
 			},
 			//frame 2
 			function () {
-				$('#f2').fadeIn(100);
+				/*$('#f2').show();*/
 				$('#f2 .upper').append(addThumbs()[0]);
 				$('#f2 .bottom').append(addThumbs()[1]);
-				var d = 0, r=0, xpos, animating = false;
+
+				$('.f2').addClass('show');
+
+				/*var d = 0, r=0, xpos, animating = false;
 				$('.row div').each(function () {
 					var that = $(this);
 					parentW = $('.row').width();
@@ -117,19 +120,19 @@
 					}
 
 				});	
-				$('#f3').show();
+				$('#f3').show();*/
 			},
 			//frame 3
-			function () {
+			/*function () {
 				setTimeout(function() {
 					$('#f3 .photo').addClass('anim');
 					setTimeout(function() {
 						$('#f3 .copy').fadeIn(100);
 					}, 200);
 				}, 550);		
-			 },
+			 },*/
 			//frame 4
-			function () {
+			/*function () {
 				
 				setTimeout(function() {
 					$('.f3').fadeOut(1000);
@@ -137,7 +140,7 @@
 					$('#f4').delay(50).fadeIn(1000);
 				}, 500);
 				
-			}
+			}*/
 		];
 		onTemplateLoad = function(experienceID){
 			player = brightcove.api.getExperience(experienceID);
@@ -176,7 +179,6 @@
 			var string2 = '';
 			parentW = $('#qzad').width();
 			if(parentW <= 720){
-				console.log(parentW);
 				for (i = 1; i <= 4; i++) {
 					if(i<=2){
 						string1+= '<div class="r1-'+i+' left"><img class="thumb" src="img/f2-r1-thumb'+i+'.jpg" /></div>';
@@ -218,7 +220,7 @@
 				});
 			});
 			$( window ).resize(function() {
-				if(currentFrame == 2 &&  !(times[currentFrame] === 3500)){
+				/*if(currentFrame == 2 &&  !(times[currentFrame] === 3500)){
 
 					waitForFinalEvent(function(){
 						$('#f2 .upper, #f2 .bottom').empty();
@@ -226,7 +228,7 @@
 					}, 10, "some unique string");
 				}else{
 					return;
-				}
+				}*/
 
 			});
 		});
