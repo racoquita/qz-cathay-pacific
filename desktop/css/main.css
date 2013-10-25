@@ -126,12 +126,10 @@ img {
 .frames.f2 {
   height: 100%;
   opacity: 0;
-}
-.frames.f2 div {
-  -webkit-transition: all .5s ease;
-  -moz-transition: all .5s ease;
-  -o-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: opacity 1s ease;
+  -moz-transition: opacity 1s ease;
+  -o-transition: opacity 1s ease;
+  transition: opacity 1s ease;
 }
 .frames.f2.show {
   -webkit-transition: all 2.1s ease;
