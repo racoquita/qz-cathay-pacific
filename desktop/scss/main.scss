@@ -102,6 +102,12 @@ img{
 					 transition: all 2.1s ease;
 			opacity: 1;
 		}
+		&.off {
+			-webkit-transition: none !important;
+			 	-moz-transition: none !important;
+			 	  -o-transition: none !important;
+					 transition: none !important;
+		}
 		.row{
 			position:relative;
 			left:0;

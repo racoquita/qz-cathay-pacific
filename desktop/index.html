@@ -109,11 +109,12 @@
 			 },
 			//frame 4
 			function () {
-				$('.f2').fadeOut(900);
+				
 				setTimeout(function() {
+					$('.f2').addClass('off').fadeOut(1000);
 					$('#f3').fadeOut(1000);
 					$('#f4').delay(50).fadeIn(1000);
-				}, 500);
+				}, 1500);
 			}
 		];
 		onTemplateLoad = function(experienceID){
