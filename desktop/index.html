@@ -95,7 +95,7 @@
 				$('#f2 .upper').append(addThumbs()[0]);
 				$('#f2 .bottom').append(addThumbs()[1]);
 				$('.f2').addClass('show');
-				*/
+				
 				$('#f3').show();
 			},
 			//frame 3
@@ -109,10 +109,10 @@
 			 },
 			//frame 4
 			function () {
-				
+				$('.f2').delay(500).fadeOut(200);
 				setTimeout(function() {
 					$('#f3').fadeOut(1000);
-					$('#f2').fadeOut(500);
+					
 					$('#f4').delay(150).fadeIn(1000);
 				}, 500);
 			}
