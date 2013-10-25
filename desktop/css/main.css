@@ -326,9 +326,9 @@ img {
     .frames.f4 .cta {
       position: absolute;
       right: 1.63636363636%;
-      bottom: 26px;
-      width: 28.6363636364%;
-      min-width: 229px; }
+      bottom: 18px;
+      width: 17.7272727272%;
+      max-width: 198px; }
 
 @media screen and (max-width: 1000px) and (min-width: 871px) {
   .frames.f4 .vid-small {
