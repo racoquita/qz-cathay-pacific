@@ -19,3 +19,4 @@ CVS
 
 *.sublime-project
 *.sublime-workspace
+*.sass-cache
