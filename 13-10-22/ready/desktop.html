@@ -93,6 +93,8 @@
 			timers[uniqueId] = setTimeout(callback, ms);
 		};
 	})();
+	var cf = '';
+	var ct = '';
 	var currentVideo = '';
 	var times=[2000, 2000, 3500];
 	var currentFrame = 0;
@@ -115,7 +117,7 @@
 		function () {
 			setTimeout(function() {
 				$('.r1-1').addClass('anim');
-				setTimeout(function(){
+				ct = setTimeout(function(){
 					$('#f3').show();
 					$('#f3 .copy').show();
 				}, 1000);
@@ -156,7 +158,7 @@
 	function changeFrame () {
 		if($.isFunction(frames[currentFrame])) {
 			frames[currentFrame]();
-			setTimeout(function(){
+			cf = setTimeout(function(){
 				currentFrame++;
 				changeFrame();
 			}, times[currentFrame]);
@@ -199,10 +201,12 @@
 	};
 	resetAd = function() {
 		currentFrame = 0;
-		$('#f1').show();
+		clearTimeout(cf);
+		clearTimeout(ct);
+		$('.f3 .copy').hide();
 		$('#f2, #f3, #f4').hide();
 		$('.r1-1').removeClass('anim');
-		$('.f3 .copy').hide();
+		$('#f1').show();
 	};
 	$(document).ready(function(){
 		QZAD.init({

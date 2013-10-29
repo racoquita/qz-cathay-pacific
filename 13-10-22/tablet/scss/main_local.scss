@@ -38,7 +38,7 @@ img{
 	width:480px;
 	height:550px;
 	position:relative;
-	background:  url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f1-bg.jpg) 0 0 no-repeat;
+	background:  url(../img/f1-bg.jpg) 0 0 no-repeat;
 	a {
 		border:0;
 		text-decoration: none;
@@ -268,8 +268,8 @@ img{
 			width: 370px;
 			a{
 				background:  
-					url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-playSymbol.png) center center no-repeat, 
-					url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-thumb-video-large.jpg) 0 0 no-repeat;
+					url(../img/f4-playSymbol.png) center center no-repeat, 
+					url(../img/f4-thumb-video-large.jpg) 0 0 no-repeat;
 				background-origin: 50% 50%;
 			}
 		}
@@ -281,16 +281,16 @@ img{
 
 			a{
 				background: 
-					url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-playSymbol-small.png) center center no-repeat, 
-					url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-thumb-video-small.jpg) 0 0 no-repeat;
+					url(../img/f4-playSymbol-small.png) center center no-repeat, 
+					url(../img/f4-thumb-video-small.jpg) 0 0 no-repeat;
 				background-origin: 50% 50%;
 			}
 			&:last-child{
 				left:195px;
 				a{
 					background: 
-						url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-playSymbol-small.png) center center no-repeat, 
-						url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-thumb-video-small-right.jpg) 0 0 no-repeat;
+						url(../img/f4-playSymbol-small.png) center center no-repeat, 
+						url(../img/f4-thumb-video-small-right.jpg) 0 0 no-repeat;
 					background-origin: 50% 50%;
 				}
 			}
