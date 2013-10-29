@@ -3,14 +3,12 @@
 <head>
 	<title>Cathay Pacific Desktop </title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<meta name="viewport" content="initial-scale=1">
 	<meta name="viewport" content="width=device-width">
 	<style type="text/css">
 		* {
 			margin: 0;
 			padding: 0;
 		}
-
 	</style>
 </head>
 <body>
@@ -24,12 +22,10 @@
 			<div class="row bottom"></div>
 		</div>
 		<div class="frames f3 hide" id="f3">
-			<!-- <div class="photo"><img src="img/f3-nigel.jpg" alt=""></div> -->
 			<div class="copy hide"><img src="img/f3-copy.png" alt="" width="426"></div>
 		</div>
 		<div class="frames f4 hide" id="f4">
 			<div class="tagline"><img src="img/f1-tagline.png" alt=""/></div>
-			
 			<div class="vid-container">
 				<div class="vid-large link"><a href="#" class="ixtrack" data-ix-category="internal" data-id="2757409367001" data-ix-label="Nigel video"></a></div>
 				<div class="vid-small link"><a href="#" class="ixtrack" data-ix-category="internal" data-id="2757389883001" data-ix-label="Nadia video"></a></div>
@@ -91,12 +87,10 @@
 			},
 			//frame 2
 			function () {
-				/*$('#f2').show();*/
+				$('#f2').show();
 				$('#f2 .upper').append(addThumbs()[0]);
 				$('#f2 .bottom').append(addThumbs()[1]);
 				$('.f2').addClass('show');
-				
-				
 			},
 			//frame 3
 			function () {
