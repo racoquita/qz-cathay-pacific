@@ -103,8 +103,7 @@
 				}, 1000);		
 			 },
 			//frame 4
-			function () {
-				
+			function () {	
 				setTimeout(function() {
 					$('.f2').addClass('off').fadeOut(1000);
 					$('#f3').fadeOut(1000);
@@ -148,27 +147,16 @@
 			var string1 = '';
 			var string2 = '';
 			parentW = $('#qzad').width();
-			if(parentW <= 720){
-				for (i = 1; i <= 4; i++) {
-					if(i<=2){
-						string1+= '<div class="r1-'+i+' left"><img class="thumb" src="img/f2-r1-thumb'+i+'.jpg" /></div>';
-						string2+= '<div class="r2-'+i+' left"><img class="thumb" src="img/f2-r2-thumb'+i+'.jpg" /></div>';
-					 }else{
-					 	string1+= '<div class="r1-'+i+'"><img class="thumb" src="img/f2-r1-thumb'+(i+2)+'.jpg" /></div>';
-					 	string2+= '<div class="r2-'+i+'"><img class="thumb" src="img/f2-r2-thumb'+(i+2)+'.jpg" /></div>';
-					 }
-				};
-			}else{
-				for (i = 1; i <= 6; i++) {
-					if(i<=3){
-						string1+= '<div class="r1-'+i+' left"><img class="thumb" src="img/f2-r1-thumb'+i+'.jpg" /></div>';
-						string2+= '<div class="r2-'+i+' left"><img class="thumb" src="img/f2-r2-thumb'+i+'.jpg" /></div>';
-					}else{
-						string1+= '<div class="r1-'+i+'"><img class="thumb" src="img/f2-r1-thumb'+i+'.jpg" /></div>';
-						string2+= '<div class="r2-'+i+'"><img class="thumb" src="img/f2-r2-thumb'+i+'.jpg" /></div>';
-					}
-				};
-			}
+		
+			for (i = 1; i <= 6; i++) {
+				if(i<=3){
+					string1+= '<div class="r1-'+i+' left"><img class="thumb" src="img/f2-r1-thumb'+i+'.jpg" /></div>';
+					string2+= '<div class="r2-'+i+' left"><img class="thumb" src="img/f2-r2-thumb'+i+'.jpg" /></div>';
+				}else{
+					string1+= '<div class="r1-'+i+'"><img class="thumb" src="img/f2-r1-thumb'+i+'.jpg" /></div>';
+					string2+= '<div class="r2-'+i+'"><img class="thumb" src="img/f2-r2-thumb'+i+'.jpg" /></div>';
+				}
+			};
 			imgs[0] = string1;
 			imgs[1] = string2;
 			return imgs;
