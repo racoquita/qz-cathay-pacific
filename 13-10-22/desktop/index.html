@@ -171,10 +171,10 @@
 			
 				brightcove.createExperiences();
 
-				$('.close').show().off().on('click', function(e){
-					e.preventDefault();
+				$('.close').show().on('click', function(e){
 					$('.video-container').hide();
 					$(this).toggle();
+					return false;
 				});
 			});
 		});

@@ -24,7 +24,7 @@
 	.frames.f4 .vid-large{height:100%;width:66.4705882353%;min-width:400px}.frames.f4 .vid-large a{background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/desktop/img/f4-playSymbol.png) center center no-repeat,url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/desktop/img/f4-thumb-video-large.jpg) 0 0 no-repeat;background-size:133px,100%;background-origin:50% 50%}
 	.frames.f4 .vid-small{position:absolute;right:0;top:0;width:31.6176470588%;height:126px}.frames.f4 .vid-small a{background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/desktop/img/f4-playSymbol-small.png) center center no-repeat,url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/desktop/img/f4-thumb-small.jpg) 0 0 no-repeat;background-size:65px,100%;background-origin:50% 50%}
 	.frames.f4 .vid-small:last-child{top:134px}.frames.f4 .vid-small:last-child a{background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/desktop/img/f4-playSymbol-small.png) center center no-repeat,url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/desktop/img/f4-thumb-small-bottom.jpg) 0 0 no-repeat;background-size:65px,100%;background-origin:50% 50%}
-	.frames.f4 .logo{position:inherit;margin:136px auto 0 auto;width:33.4545454545%;min-width:326px;bottom:18px}.frames.f4 .cta{position:absolute;right:1.63636363636%;bottom:25px;width:21.6363636364%;max-width:238px;min-width:200px}@media screen and (max-width:1000px) and (min-width:871px){.frames.f4 .vid-small{height:107px}
+	.frames.f4 .logo{position:inherit;margin:136px auto 0 auto;width:33.4545454545%;min-width:326px;bottom:18px}.frames.f4 .cta{display:block;position:absolute;right:1.63636363636%;bottom:25px;width:21.6363636364%;max-width:238px;min-width:200px}@media screen and (max-width:1000px) and (min-width:871px){.frames.f4 .vid-small{height:107px}
 	.frames.f4 .vid-small a{height:107px}.frames.f4 .vid-small:last-child{top:115px}}@media screen and (min-width:721px) and (max-width:870px){.frames.f4 .vid-small{height:107px}.frames.f4 .vid-small a{height:107px}.frames.f4 .vid-small:last-child{top:115px}
 	.frames.f4 .logo{margin-left:70px}}@media screen and (max-width:720px){.frames#f3 .photo{position:absolute;top:0;right:0;left:83%;bottom:240px;overflow:hidden;-webkit-transition:all 1s ease;-moz-transition:all 1s ease;-o-transition:all .75s ease;transition:all 1s ease}
 	.frames#f3 .photo img{opacity:0;height:97%;width:auto;margin-left:-25px;margin-top:-9px}.frames#f3 .photo.anim{left:24.9%;bottom:0}.frames#f3 .photo.anim img{height:100%;opacity:1;margin-left:0;margin-top:0}.frames.f4 .vid-small{height:107px}.frames.f4 .vid-small a{height:107px}
@@ -52,7 +52,7 @@
 		</div>
 		<div class="logo"><img src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/desktop/img/logo.png" width="368" alt="Cathay Pacific Logo" /></div>
 		<div class="cta"><a class="ixtrack" data-ix-category="external"  data-ix-label="Link to site" href="http://people.cathaypacific.com/people/en/home"><img src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/desktop/img/cta.png" alt=""></a></div>
-		<a class="close ixtrack" data-ix-category="internal" data-ix-label="close video" >&#215;</a>
+		<a class="close ixtrack" data-ix-category="media" data-ix-label="close video" >&#215;</a>
 	</div>
 	<div class="video-container">
 			<object id="myExperience" class="BrightcoveExperience">
@@ -192,11 +192,14 @@
 		
 			brightcove.createExperiences();
 
-			$('.close').show().off().on('click', function(e){
-				e.preventDefault();
-				$('.video-container').hide();
-				$(this).toggle();
-			});
+			$('.close').show();
+			setTimeout(function(){
+				$('.close').on('click', function(e){
+					$('.video-container').hide();
+					$(this).toggle();
+					return false;
+				});
+			}, 250);
 		});
 	};
 	resetAd = function() {
