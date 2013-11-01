@@ -33,15 +33,17 @@
 		<div class="frames f4 hide" id="f4">
 			<div class="tagline"><img src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f1-tagline.png" alt="" width="392"/></div>
 			<div class="vid-container">
-				<div class="vid-large link"><a href="#" class="ixtrack"  data-ix-category="internal" data-ix-label="Nigel video" data-id="2757409367001"></a></div>
-				<div class="vid-small link"><a href="#" class="ixtrack"  data-ix-category="internal" data-ix-label="Nadia video" data-id="2757389883001"></a></div>
-				<div class="vid-small link"><a href="#"  class="ixtrack"  data-ix-category="internal" data-ix-label="Barbara video" data-id="2757409370001"></a></div>
+				<div class="vid-large link"><a href="#" class="ixtrack"  data-ix-category="media" data-ix-label="Nigel video" data-id="2757409367001"></a></div>
+				<div class="vid-small link"><a href="#" class="ixtrack"  data-ix-category="media" data-ix-label="Nadia video" data-id="2757389883001"></a></div>
+				<div class="vid-small link"><a href="#"  class="ixtrack"  data-ix-category="media" data-ix-label="Barbara video" data-id="2757409370001"></a></div>
 			</div>
-			<div class="cta"><a class="ixtrack" data-ix-category="external"  data-ix-label="Link to site" href="http://people.cathaypacific.com/people/en/home"><img src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/cta.png" alt="Meet the team now"></a></div>
+			<div class="cta">
+				<a class="ixtrack" target="_blank" data-ix-category="external" data-ix-label="Link to site" href="http://people.cathaypacific.com/people/en/home"><img src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/cta.png" alt="Meet the team now"></a>
+			</div>
 			<div class="logo"><img src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/logo.png" width="368" alt="" /></div>
 		</div>
 		<div class="video-container"></div>
-		<a class="close ixtrack" data-ix-category="internal" data-ix-label="close video" >&#215;</a>
+		<a class="close ixtrack" data-ix-category="media" data-ix-label="close video" >&#215;</a>
 	</div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
 	<script id="ix-namer"
@@ -53,14 +55,14 @@
 	<script src="http://app.qz.com/js/frameMessager/frameMessager.js" type="text/javascript"></script>
 	<script type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
 	<script type="text/javascript">
-		var cf = '';
+		var ca = '', cb = '', cc = '', cd = '', ce = '', cf = '';
 		var currentVideo = '';
 		var times=[3000, 1500, 5000];
 		var currentFrame = 0;
 		var imgs = [];
 		var frames = [
 			function () {
-				setTimeout(function() {
+				cc = setTimeout(function() {
 					$('#f1').fadeOut(2000);
 				}, 750);
 			},
@@ -92,10 +94,10 @@
 
 			//frame 3
 			function () {	
-				setTimeout(function() {
+				cd = setTimeout(function() {
 					$('.r1-3').addClass('anim');
 
-					setTimeout(function(){
+					cb = setTimeout(function(){
 						$('.r1-3 .thumb').attr('src','http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r1-thumb3-text.jpg');
 					}, 1000);
 				}, 1000);			
@@ -103,7 +105,7 @@
 
 			//frame 4
 			function () {
-				setTimeout(function() {
+				ce = setTimeout(function() {
 					$('.f3').fadeOut(1000);
 					$('.f2').fadeOut(900);
 					$('#f4').delay(50).fadeIn(1000);
@@ -204,7 +206,12 @@
 		};
 		resetAd = function() {
 			currentFrame = 0;
+			clearTimeout(cb);
+			clearTimeout(cc);
+			clearTimeout(cd);
+			clearTimeout(ce);
 			clearTimeout(cf);
+			$('.frames').removeClass('off');
 			$('#f2 .upper, #f2 .bottom').empty();
 			$('#f2, #f3, #f4').hide();
 			$('.r1-3').removeClass('anim');
