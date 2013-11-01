@@ -18,6 +18,7 @@
 	</style>
 
 	<div id="qzad">
+		<div style="display:none">test 1</div>
 		<div class="frames f1" id="f1">
 			<div class="tagline"><img src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f1-tagline.png" alt="" width="390" /></div>
 			<div class="logo"><img src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/logo.png" alt="" /></div>
@@ -156,11 +157,6 @@
 					videoDTO.displayName = "";
 					contentModule.updateMedia(videoDTO, function(newVideoDTO) {
 						videoPlayer.play();
-						$('.close').show().off().on('click', function(e){
-							e.preventDefault();
-							removePlayer();
-							$(this).toggle();
-						});
 					});
 				}
 			});
@@ -178,8 +174,8 @@
 				'<param name="bgcolor" value="#FFFFFF" />' +
 				'<param name="width" value="" />' +
 				'<param name="height" value="" />' +
-				'<param name="playerID" value="1783580117001" />' +
-				'<param name="playerKey" value="AQ~~,AAABnwxttEE~,HpQpfOmVc2uIuYoJ5Ua7iU_HbguYUAep" />' +
+				'<param name="playerID" value="2792921631001" />' +
+				'<param name="playerKey" value="AQ~~,AAABnwxttEE~,HpQpfOmVc2u55Gbu1MumtuYyF0UfUavi" />' +
 				'<param name="isVid" value="true" />' +
 				'<param name="isUI" value="true" />' +
 				'<param name="dynamicStreaming" value="true" />' +
@@ -194,13 +190,16 @@
 			$('.link a').on('click',function(e){
 				e.preventDefault();
 				$('.video-container').show();
+
 				currentVideo = $(e.currentTarget).data('id');
 				$('.video-container').html(addPlayer(currentVideo));
 				brightcove.createExperiences();
-				$('.close').show().off().on('click', function(e){
+
+				$('.close').show();
+				$('.close').off().on('click', function(e){
 					e.preventDefault();
-					$('.video-container').hide();
 					$(this).toggle();
+					removePlayer();
 				});
 			});
 		};

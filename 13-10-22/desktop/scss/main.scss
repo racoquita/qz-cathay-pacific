@@ -389,36 +389,40 @@ img{
 			}
 		}
 		.vid-large{
-			height: 100%;
-			width: 66.4705882353%;
-			min-width: 400px;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			width: 66.4705%;
+
 			a{
-				background:  url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/desktop/img/f4-playSymbol.png) center center no-repeat, url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/desktop/img/f4-thumb-video-large.jpg) 0 0 no-repeat;
-				background-size: 133px, 100%;
-				background-origin: 50% 50%;
+				background: url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/desktop/img/f4-playSymbol.png) center center no-repeat, 
+							url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/desktop/img/f4-thumb-video-large.jpg) 0 0 no-repeat;
+				background-size: 133px, cover;
 			}
 		}
 		.vid-small{
 			position:absolute;
 			right: 0;
-			top:0;
-			width: 31.6176470588%;
-			height: 126px;
+			width: 31.6176%;
+
 			a{
 				background: 
 					url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/desktop/img/f4-playSymbol-small.png) center center no-repeat, 
 					url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/desktop/img/f4-thumb-small.jpg) 0 0 no-repeat;
-				background-size: 65px, 100%;
-				background-origin: 50% 50%;
+				background-size: 65px, cover;
+			}
+			&:nth-child(2) {
+				top:0;
+				bottom: 52%;
 			}
 			&:last-child{
-				top:134px;
+				top: 52%;
+				bottom: 0;
 				a{
 					background: 
 						url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/desktop/img/f4-playSymbol-small.png) center center no-repeat, 
 						url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/desktop/img/f4-thumb-small-bottom.jpg) 0 0 no-repeat;
-					background-size: 65px, 100%;
-					background-origin: 50% 50%;
+					background-size: 65px, cover;
 				}
 			}
 		}
@@ -441,32 +445,35 @@ img{
 
 }
 @media screen  and (max-width: 1000px) and (min-width: 871px) {
-	.frames{
+	/* .frames{
 		&.f4{
+			.vid-large{
+				height: 227px;
+			}
 			.vid-small{
 				height: 107px;
 				a{
 					height:107px;
 				}
 				&:last-child{
-					top:115px;;
+					top:123px;
 				}
 			}
 		}
-	}
+	} */
 }
 @media screen and (min-width: 721px) and (max-width: 870px) {
 	.frames{
 		&.f4{
-			.vid-small{
+			/* .vid-small{
 				height: 107px;
 				a{
 					height:107px;
 				}
 				&:last-child{
-					top:115px;;
+					top:120px;;
 				}
-			}
+			} */
 			.logo{
 				margin-left: 70px;
 			}
@@ -508,7 +515,7 @@ img{
 			}
 		}
 		&.f4{
-			.vid-small{
+			/* .vid-small{
 				height: 107px;
 				a{
 					height:107px;
@@ -516,7 +523,7 @@ img{
 				&:last-child{
 					top:115px;;
 				}
-			}
+			} */
 			.cta{
 
 			}

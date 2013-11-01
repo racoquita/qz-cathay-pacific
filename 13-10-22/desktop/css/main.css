@@ -344,29 +344,29 @@ img {
         height: 100%;
         border: 0; }
     .frames.f4 .vid-large {
-      height: 100%;
-      width: 66.4705882353%;
-      min-width: 400px; }
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 66.4705%; }
       .frames.f4 .vid-large a {
         background: url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/desktop/img/f4-playSymbol.png) center center no-repeat, url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/desktop/img/f4-thumb-video-large.jpg) 0 0 no-repeat;
-        background-size: 133px, 100%;
-        background-origin: 50% 50%; }
+        background-size: 133px, cover; }
     .frames.f4 .vid-small {
       position: absolute;
       right: 0;
-      top: 0;
-      width: 31.6176470588%;
-      height: 126px; }
+      width: 31.6176%; }
       .frames.f4 .vid-small a {
         background: url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/desktop/img/f4-playSymbol-small.png) center center no-repeat, url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/desktop/img/f4-thumb-small.jpg) 0 0 no-repeat;
-        background-size: 65px, 100%;
-        background-origin: 50% 50%; }
+        background-size: 65px, cover; }
+      .frames.f4 .vid-small:nth-child(2) {
+        top: 0;
+        bottom: 52%; }
       .frames.f4 .vid-small:last-child {
-        top: 134px; }
+        top: 52%;
+        bottom: 0; }
         .frames.f4 .vid-small:last-child a {
           background: url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/desktop/img/f4-playSymbol-small.png) center center no-repeat, url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/desktop/img/f4-thumb-small-bottom.jpg) 0 0 no-repeat;
-          background-size: 65px, 100%;
-          background-origin: 50% 50%; }
+          background-size: 65px, cover; }
     .frames.f4 .logo {
       position: inherit;
       margin: 136px auto 0 auto;
@@ -382,21 +382,35 @@ img {
       min-width: 200px; }
 
 @media screen and (max-width: 1000px) and (min-width: 871px) {
-  .frames.f4 .vid-small {
-    height: 107px; }
-    .frames.f4 .vid-small a {
-      height: 107px; }
-    .frames.f4 .vid-small:last-child {
-      top: 115px; } }
+  /* .frames{
+  	&.f4{
+  		.vid-large{
+  			height: 227px;
+  		}
+  		.vid-small{
+  			height: 107px;
+  			a{
+  				height:107px;
+  			}
+  			&:last-child{
+  				top:123px;
+  			}
+  		}
+  	}
+  } */ }
 @media screen and (min-width: 721px) and (max-width: 870px) {
-  .frames.f4 .vid-small {
-    height: 107px; }
-    .frames.f4 .vid-small a {
-      height: 107px; }
-    .frames.f4 .vid-small:last-child {
-      top: 115px; }
-  .frames.f4 .logo {
-    margin-left: 70px; } }
+  .frames.f4 {
+    /* .vid-small{
+    	height: 107px;
+    	a{
+    		height:107px;
+    	}
+    	&:last-child{
+    		top:120px;;
+    	}
+    } */ }
+    .frames.f4 .logo {
+      margin-left: 70px; } }
 @media screen and (max-width: 720px) {
   .frames#f3 .photo {
     position: absolute;
@@ -423,11 +437,15 @@ img {
         opacity: 1;
         margin-left: 0;
         margin-top: 0; }
-  .frames.f4 .vid-small {
-    height: 107px; }
-    .frames.f4 .vid-small a {
-      height: 107px; }
-    .frames.f4 .vid-small:last-child {
-      top: 115px; }
-  .frames.f4 .logo {
-    margin-left: 60px; } }
+  .frames.f4 {
+    /* .vid-small{
+    	height: 107px;
+    	a{
+    		height:107px;
+    	}
+    	&:last-child{
+    		top:115px;;
+    	}
+    } */ }
+    .frames.f4 .logo {
+      margin-left: 60px; } }
