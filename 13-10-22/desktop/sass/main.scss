@@ -8,6 +8,11 @@ img{
 	width:100%;
 	border:0;
 }
+.noflicker {
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+	-webkit-transform: translateZ(0);
+}
 .hide{ display:none; }
 
 @keyframes fade {
