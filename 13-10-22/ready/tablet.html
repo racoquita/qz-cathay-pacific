@@ -98,7 +98,7 @@
 					$('.r1-3').addClass('anim');
 
 					cb = setTimeout(function(){
-						$('.r1-3 .thumb').attr('src','http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r1-thumb3-text.jpg');
+						$('.r1-3 .thumb').addClass('noflicker').attr('src','http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r1-thumb3-text.jpg');
 					}, 1000);
 				}, 1000);			
 			},
@@ -128,11 +128,11 @@
 
 			for (i = 1; i <= 3; i++) {
 				if(i<=3){
-					string1+= '<div class="r1-'+i+' left"><img class="thumb" src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r1-thumb'+i+'.jpg" /></div>';
-					string2+= '<div class="r2-'+i+' left"><img class="thumb" src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r2-thumb'+i+'.jpg" /></div>';
+					string1+= '<div class="r1-'+i+' left"><img class="thumb noflicker" src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r1-thumb'+i+'.jpg" /></div>';
+					string2+= '<div class="r2-'+i+' left"><img class="thumb noflicker" src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r2-thumb'+i+'.jpg" /></div>';
 				}else{
-					string1+= '<div class="r1-'+i+'"><img class="thumb" src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r1-thumb'+i+'.jpg" /></div>';
-					string2+= '<div class="r2-'+i+'"><img class="thumb" src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r2-thumb'+i+'.jpg" /></div>';
+					string1+= '<div class="r1-'+i+'"><img class="thumb noflicker" src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r1-thumb'+i+'.jpg" /></div>';
+					string2+= '<div class="r2-'+i+'"><img class="thumb noflicker" src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r2-thumb'+i+'.jpg" /></div>';
 				}
 			};
 			imgs[0] = string1;
