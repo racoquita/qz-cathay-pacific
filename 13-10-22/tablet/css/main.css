@@ -216,7 +216,11 @@ img {
 .frames.f2 .row.upper div {
   left: 480px;
 }
-/* line 150, ../sass/main.scss */
+/* line 149, ../sass/main.scss */
+.frames.f2 .row.upper .r1-3 {
+  overflow: hidden;
+}
+/* line 152, ../sass/main.scss */
 .frames.f2 .row.upper .r1-3 .thumb {
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
@@ -228,7 +232,7 @@ img {
   -moz-transform: scaleX(2) scaleY(1.3);
   transform: scaleX(2) scaleY(1.3);
 }
-/* line 161, ../sass/main.scss */
+/* line 163, ../sass/main.scss */
 .frames.f2 .row.upper .r1-3.anim {
   left: 0 !important;
   -webkit-backface-visibility: hidden;
@@ -239,7 +243,7 @@ img {
   -o-transition: all 1s ease;
   transition: all 1s ease;
 }
-/* line 172, ../sass/main.scss */
+/* line 174, ../sass/main.scss */
 .frames.f2 .row.upper .r1-3.anim .thumb {
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
@@ -251,11 +255,11 @@ img {
   -moz-transform: scaleX(3) scaleY(2);
   transform: scaleX(3) scaleY(2);
 }
-/* line 188, ../sass/main.scss */
+/* line 190, ../sass/main.scss */
 .frames.f2 .row.bottom div {
   right: 480px;
 }
-/* line 193, ../sass/main.scss */
+/* line 195, ../sass/main.scss */
 .frames.f2.fade {
   opacity: 0;
   -webkit-animation: fade 0.3s forwards;
@@ -263,18 +267,18 @@ img {
   -o-animation: fade 0.3s forwards;
   animation: fade 0.3s forwards;
 }
-/* line 201, ../sass/main.scss */
+/* line 203, ../sass/main.scss */
 .frames.f3 {
   opacity: 1;
 }
-/* line 203, ../sass/main.scss */
+/* line 205, ../sass/main.scss */
 .frames.f3 div {
   -webkit-transition: opacity .5s ease;
   -moz-transition: opacity .5s ease;
   -o-transition: opacity .5s ease;
   transition: opacity .5s ease;
 }
-/* line 210, ../sass/main.scss */
+/* line 212, ../sass/main.scss */
 .frames.f3 .photo {
   position: absolute;
   top: 0;
@@ -287,25 +291,25 @@ img {
   -o-transition: all 20s ease;
   transition: all 20s ease;
 }
-/* line 221, ../sass/main.scss */
+/* line 223, ../sass/main.scss */
 .frames.f3 .photo img {
   opacity: 0;
   height: 124%;
   width: auto;
   margin-left: -17px;
 }
-/* line 227, ../sass/main.scss */
+/* line 229, ../sass/main.scss */
 .frames.f3 .photo.anim {
   left: 0;
   bottom: 0;
 }
-/* line 230, ../sass/main.scss */
+/* line 232, ../sass/main.scss */
 .frames.f3 .photo.anim img {
   height: 100%;
   margin-left: 0;
   opacity: 1;
 }
-/* line 237, ../sass/main.scss */
+/* line 239, ../sass/main.scss */
 .frames.f3.fade {
   opacity: 0;
   -webkit-animation: fade 0.75s forwards;
@@ -313,12 +317,12 @@ img {
   -o-animation: fade 0.75s forwards;
   animation: fade 0.75s forwards;
 }
-/* line 245, ../sass/main.scss */
+/* line 247, ../sass/main.scss */
 .frames.f4 {
   position: relative;
   opacity: 1;
 }
-/* line 248, ../sass/main.scss */
+/* line 250, ../sass/main.scss */
 .frames.f4.fade-in {
   opacity: 0;
   -webkit-animation: fade-in 0.85s ease;
@@ -326,14 +330,14 @@ img {
   -o-animation: fade-in 0.85s ease;
   animation: fade-in 0.85s ease;
 }
-/* line 255, ../sass/main.scss */
+/* line 257, ../sass/main.scss */
 .frames.f4 .tagline {
   position: inherit;
   margin: 0 auto;
   top: 45px;
   width: 392px;
 }
-/* line 261, ../sass/main.scss */
+/* line 263, ../sass/main.scss */
 .frames.f4 .vid-container {
   position: relative;
   width: 370px;
@@ -341,52 +345,52 @@ img {
   margin: 0 auto;
   top: 72px;
 }
-/* line 267, ../sass/main.scss */
+/* line 269, ../sass/main.scss */
 .frames.f4 .vid-container a {
   display: block;
   width: 100%;
   height: 100%;
   border: 0;
 }
-/* line 274, ../sass/main.scss */
+/* line 276, ../sass/main.scss */
 .frames.f4 .vid-large {
   height: 206px;
   width: 370px;
 }
-/* line 277, ../sass/main.scss */
+/* line 279, ../sass/main.scss */
 .frames.f4 .vid-large a {
   background: url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-playSymbol.png) center center no-repeat, url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-thumb-video-large.jpg) 0 0 no-repeat;
   background-origin: 50% 50%;
 }
-/* line 284, ../sass/main.scss */
+/* line 286, ../sass/main.scss */
 .frames.f4 .vid-small {
   position: absolute;
   top: 223px;
   width: 170px;
   height: 100px;
 }
-/* line 290, ../sass/main.scss */
+/* line 292, ../sass/main.scss */
 .frames.f4 .vid-small a {
   background: url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-playSymbol-small.png) center center no-repeat, url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-thumb-video-small.jpg) 0 0 no-repeat;
   background-origin: 50% 50%;
 }
-/* line 296, ../sass/main.scss */
+/* line 298, ../sass/main.scss */
 .frames.f4 .vid-small:last-child {
   left: 195px;
 }
-/* line 298, ../sass/main.scss */
+/* line 300, ../sass/main.scss */
 .frames.f4 .vid-small:last-child a {
   background: url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-playSymbol-small.png) center center no-repeat, url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-thumb-video-small-right.jpg) 0 0 no-repeat;
   background-origin: 50% 50%;
 }
-/* line 306, ../sass/main.scss */
+/* line 308, ../sass/main.scss */
 .frames.f4 .logo {
   position: inherit;
   margin: 40px auto 0 auto;
   width: 300px;
   bottom: 18px;
 }
-/* line 312, ../sass/main.scss */
+/* line 314, ../sass/main.scss */
 .frames.f4 .cta {
   position: relative;
   margin: 95px auto 0 auto;
