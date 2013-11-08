@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
 	<title>Cathay Pacific Tablet</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/main-local.css">
 	<style type="text/css">
 		* {
 			margin: 0;
@@ -17,10 +17,8 @@
 			<div class="logo"><img src="img/logo.png" alt="" /></div>
 		</div>
 		<div class="frames f2 hide" id="f2">
-			<div class="row upper">
-			</div>
-			<div class="row bottom">
-			</div>
+			<div class="row upper"></div>
+			<div class="row bottom"></div>
 		</div>
 		<div class="frames f3 hide" id="f3">
 		</div>
@@ -64,7 +62,6 @@
 
 			//frame 2
 			function () {
-				
 				$('#f2').show();
 				$('#f2 .upper').append(addThumbs()[0]);
 				$('#f2 .bottom').append(addThumbs()[1]);

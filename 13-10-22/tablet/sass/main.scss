@@ -159,15 +159,15 @@ img{
 						        transition: all 1s ease;
 
 						.thumb {
-						-webkit-transition: all 1s ease;
-					       -moz-transition: all 1s ease;
-						        transition: all 1s ease;
-						-webkit-transform-origin: 0% 0%;
-						   -moz-transform-origin: 0% 0%;
-						        transform-origin: 0% 0%;
-						-webkit-transform: scaleX(3) scaleY(2);
-						   -moz-transform: scaleX(3) scaleY(2);
-						        transform: scaleX(3) scaleY(2);
+							-webkit-transition: all 1s ease;
+						       -moz-transition: all 1s ease;
+							        transition: all 1s ease;
+							-webkit-transform-origin: 0% 0%;
+							   -moz-transform-origin: 0% 0%;
+							        transform-origin: 0% 0%;
+							-webkit-transform: scaleX(3) scaleY(2);
+							   -moz-transform: scaleX(3) scaleY(2);
+							        transform: scaleX(3) scaleY(2);
 						}
 					}
 				}
