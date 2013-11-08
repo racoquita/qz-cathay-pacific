@@ -1,227 +1,234 @@
-	<style type="text/css">
-		img{display:block;width:100%;border:0}.noflicker{-webkit-backface-visibility:hidden;-webkit-perspective:1000;-webkit-transform:translateZ(0)}@keyframes fade{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes fade{0%{opacity:1}100%{opacity:0}}@-moz-keyframes fade{0%{opacity:1}
-		100%{opacity:0}}@-o-keyframes fade{0%{opacity:1}100%{opacity:0}}@keyframes fade{0%{opacity:1}100%{opacity:0}}@keyframes fade-in{0%{opacity:0}100%{opacity:1}}.hide{display:none}#qzad{width:480px;height:550px;position:relative;background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f1-bg.jpg) 0 0 no-repeat}
-		#qzad a{border:0;text-decoration:none}.video-container{position:absolute;top:40px;bottom:0;left:0;right:0;height:100%;display:none}#myExperience{width:100%;height:550px}.close{display:block;vertical-align:middle;cursor:pointer;position:absolute;z-index:102;background-color:black;color:white;text-align:right;padding-right:20px;width:460px;height:40px;line-height:40px;top:0;right:0;display:none}
-		.frames{position:absolute;width:100%;top:0;bottom:0;height:550px}.frames.hide{display:none}.frames.f1 .tagline{margin:230px auto 0 auto;width:390px}.frames.f1 .logo{width:300px;margin:228px auto 0 auto}.frames.f2{height:100%;overflow:hidden}.frames.f2 .row{position:relative;left:0;width:480px;height:275px}
-		.frames.f2 .row div{position:absolute;top:0;width:160px;height:275px;-webkit-transition:all .5s ease;-moz-transition:all .5s ease;-o-transition:all .5s ease;transition:all .5s ease}.frames.f2 .row div.f2-r1-thumb3 img{margin-left:-25px;width:480px;height:550px;margin-top:-5px;opacity:0}
-		.frames.f2 .row .thumb{display:block;height:100%}.frames.f2 .row.upper div{left:480px}.frames.f2 .row.upper .r1-3 .thumb{-webkit-transition:all 1s ease;-moz-transition:all 1s ease;transition:all 1s ease;-webkit-transform-origin:0 0;-moz-transform-origin:0 0;transform-origin:0 0;-webkit-transform:scaleX(2) scaleY(1.3);-moz-transform:scaleX(2) scaleY(1.3);transform:scaleX(2) scaleY(1.3)}
-		.frames.f2 .row.upper .r1-3.anim{left:0!important;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;z-index:101;-webkit-transition:all 1s ease;-moz-transition:all 1s ease;-o-transition:all 1s ease;transition:all 1s ease}.frames.f2 .row.upper .r1-3.anim .thumb{-webkit-transition:all 1s ease;-moz-transition:all 1s ease;transition:all 1s ease;-webkit-transform-origin:0 0;-moz-transform-origin:0 0;transform-origin:0 0;-webkit-transform:scaleX(3) scaleY(2);-moz-transform:scaleX(3) scaleY(2);transform:scaleX(3) scaleY(2)}
-		.frames.f2 .row.bottom div{right:480px}.frames.f2.fade{opacity:0;-webkit-animation:fade .3s forwards;-moz-animation:fade .3s forwards;-o-animation:fade .3s forwards;animation:fade .3s forwards}.frames.f3{opacity:1}.frames.f3 div{-webkit-transition:opacity .5s ease;-moz-transition:opacity .5s ease;-o-transition:opacity .5s ease;transition:opacity .5s ease}
-		.frames.f3 .photo{position:absolute;top:0;right:0;left:323px;bottom:275px;overflow:hidden;-webkit-transition:all 20s ease;-moz-transition:all 20s ease;-o-transition:all 20s ease;transition:all 20s ease}.frames.f3 .photo img{opacity:0;height:124%;width:auto;margin-left:-17px}
-		.frames.f3 .photo.anim{left:0;bottom:0}.frames.f3 .photo.anim img{height:100%;margin-left:0;opacity:1}.frames.f3.fade{opacity:0;-webkit-animation:fade .75s forwards;-moz-animation:fade .75s forwards;-o-animation:fade .75s forwards;animation:fade .75s forwards}
-		.frames.f4{position:relative;opacity:1}.frames.f4.fade-in{opacity:0;-webkit-animation:fade-in .85s ease;-moz-animation:fade-in .85s ease;-o-animation:fade-in .85s ease;animation:fade-in .85s ease}.frames.f4 .tagline{position:inherit;margin:0 auto;top:45px;width:392px}
-		.frames.f4 .vid-container{position:relative;width:370px;height:322px;margin:0 auto;top:72px}.frames.f4 .vid-container a{display:block;width:100%;height:100%;border:0}.frames.f4 .vid-large{height:206px;width:370px}.frames.f4 .vid-large a{background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-playSymbol.png) center center no-repeat,url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-thumb-video-large.jpg) 0 0 no-repeat;background-origin:50% 50%}
-		.frames.f4 .vid-small{position:absolute;top:223px;width:170px;height:100px}.frames.f4 .vid-small a{background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-playSymbol-small.png) center center no-repeat,url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-thumb-video-small.jpg) 0 0 no-repeat;background-origin:50% 50%}
-		.frames.f4 .vid-small:last-child{left:195px}.frames.f4 .vid-small:last-child a{background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-playSymbol-small.png) center center no-repeat,url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-thumb-video-small-right.jpg) 0 0 no-repeat;background-origin:50% 50%}
-		.frames.f4 .logo{position:inherit;margin:40px auto 0 auto;width:300px;bottom:18px}.frames.f4 .cta{position:relative;margin:95px auto 0 auto;width:220px}
-	</style>
+<style type="text/css">
+	*{margin:0;padding:0}img{display:block;width:100%;border:0}.noflicker{-webkit-backface-visibility:hidden;-webkit-perspective:1000;-webkit-transform:translateZ(0)}.preload *{-webkit-transition:none!important;-moz-transition:none!important;-ms-transition:none!important;-o-transition:none!important;transition:none!important}
+	@keyframes fade{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes fade{0%{opacity:1}100%{opacity:0}}@-moz-keyframes fade{0%{opacity:1}100%{opacity:0}}@-o-keyframes fade{0%{opacity:1}100%{opacity:0}}@keyframes fade{0%{opacity:1}100%{opacity:0}}@keyframes fade-in{0%{opacity:0}
+	100%{opacity:1}}.hide{display:none}#qzad{width:480px;height:550px;position:relative;background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f1-bg.jpg) 0 0 no-repeat}#qzad a{border:0;text-decoration:none}.video-container{position:absolute;top:40px;bottom:0;left:0;right:0;height:100%;display:none}
+	#myExperience{width:100%;height:550px}.close{display:block;font-size:40px;cursor:pointer;position:absolute;z-index:102;background-color:black;color:white;text-align:right;padding-right:20px;width:460px;height:40px;line-height:40px;top:-5px;right:0;display:none}
+	.frames{position:absolute;width:100%;top:0;bottom:0;height:550px}.frames.hide{display:none}.frames.f1 .tagline{margin:230px auto 0 auto;width:390px}.frames.f1 .logo{width:300px;margin:228px auto 0 auto}.frames.f2{height:100%;overflow:hidden}.frames.f2 .row{position:relative;left:0;width:480px;height:275px}
+	.frames.f2 .row div{position:absolute;top:0;width:160px;height:275px;-webkit-transition:all .5s ease;-moz-transition:all .5s ease;-o-transition:all .5s ease;transition:all .5s ease}.frames.f2 .row div.f2-r1-thumb3 img{margin-left:-25px;width:480px;height:550px;margin-top:-5px;opacity:0}
+	.frames.f2 .row .thumb{display:block;height:100%}.frames.f2 .row.upper div{left:480px}.frames.f2 .row.upper .r1-3 .thumb{-webkit-transition:all 1s ease;-moz-transition:all 1s ease;transition:all 1s ease;-webkit-transform-origin:0 0;-moz-transform-origin:0 0;transform-origin:0 0;-webkit-transform:scaleX(2) scaleY(1.3);-moz-transform:scaleX(2) scaleY(1.3);transform:scaleX(2) scaleY(1.3)}
+	.frames.f2 .row.upper .r1-3.anim{left:0!important;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;z-index:101;-webkit-transition:all 1s ease;-moz-transition:all 1s ease;-o-transition:all 1s ease;transition:all 1s ease}.frames.f2 .row.upper .r1-3.anim .thumb{-webkit-transition:all 1s ease;-moz-transition:all 1s ease;transition:all 1s ease;-webkit-transform-origin:0 0;-moz-transform-origin:0 0;transform-origin:0 0;-webkit-transform:scaleX(3) scaleY(2);-moz-transform:scaleX(3) scaleY(2);transform:scaleX(3) scaleY(2)}
+	.frames.f2 .row.bottom div{right:480px}.frames.f2.fade{opacity:0;-webkit-animation:fade .3s forwards;-moz-animation:fade .3s forwards;-o-animation:fade .3s forwards;animation:fade .3s forwards}.frames.f3{opacity:1}.frames.f3 div{-webkit-transition:opacity .5s ease;-moz-transition:opacity .5s ease;-o-transition:opacity .5s ease;transition:opacity .5s ease}
+	.frames.f3 .photo{position:absolute;top:0;right:0;left:323px;bottom:275px;overflow:hidden;-webkit-transition:all 20s ease;-moz-transition:all 20s ease;-o-transition:all 20s ease;transition:all 20s ease}.frames.f3 .photo img{opacity:0;height:124%;width:auto;margin-left:-17px}
+	.frames.f3 .photo.anim{left:0;bottom:0}.frames.f3 .photo.anim img{height:100%;margin-left:0;opacity:1}.frames.f3.fade{opacity:0;-webkit-animation:fade .75s forwards;-moz-animation:fade .75s forwards;-o-animation:fade .75s forwards;animation:fade .75s forwards}
+	.frames.f4{position:relative;opacity:1}.frames.f4.fade-in{opacity:0;-webkit-animation:fade-in .85s ease;-moz-animation:fade-in .85s ease;-o-animation:fade-in .85s ease;animation:fade-in .85s ease}.frames.f4 .tagline{position:inherit;margin:0 auto;top:45px;width:392px}
+	.frames.f4 .vid-container{position:relative;width:370px;height:322px;margin:0 auto;top:72px}.frames.f4 .vid-container a{display:block;width:100%;height:100%;border:0}.frames.f4 .vid-large{height:206px;width:370px}.frames.f4 .vid-large a{background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-playSymbol.png) center center no-repeat,url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-thumb-video-large.jpg) 0 0 no-repeat;background-origin:50% 50%}
+	.frames.f4 .vid-small{position:absolute;top:223px;width:170px;height:100px}.frames.f4 .vid-small a{background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-playSymbol-small.png) center center no-repeat,url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-thumb-video-small.jpg) 0 0 no-repeat;background-origin:50% 50%}
+	.frames.f4 .vid-small:last-child{left:195px}.frames.f4 .vid-small:last-child a{background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-playSymbol-small.png) center center no-repeat,url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-thumb-video-small-right.jpg) 0 0 no-repeat;background-origin:50% 50%}
+	.frames.f4 .logo{position:inherit;margin:40px auto 0 auto;width:300px;bottom:18px}.frames.f4 .cta{position:relative;margin:95px auto 0 auto;width:220px}
+</style>
 
-	<div id="qzad">
-		<div style="display:none">test 1</div>
-		<div class="frames f1 noflicker" id="f1">
-			<div class="tagline"><img src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f1-tagline.png" alt="" width="390" /></div>
-			<div class="logo"><img src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/logo.png" alt="" /></div>
-		</div>
-		<div class="frames f2 hide noflicker" id="f2">
-			<div class="row upper">
-			</div>
-			<div class="row bottom">
-			</div>
-		</div>
-		<div class="frames f3 hide noflicker" id="f3">
-		</div>
-		<div class="frames f4 hide noflicker" id="f4">
-			<div class="tagline"><img src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f1-tagline.png" alt="" width="392"/></div>
-			<div class="vid-container">
-				<div class="vid-large link noflicker"><a href="#" class="ixtrack noflicker"  data-ix-category="media" data-ix-label="Nigel video" data-id="2757409367001"></a></div>
-				<div class="vid-small link noflicker"><a href="#" class="ixtrack noflicker"  data-ix-category="media" data-ix-label="Nadia video" data-id="2757389883001"></a></div>
-				<div class="vid-small link noflicker"><a href="#"  class="ixtrack noflicker"  data-ix-category="media" data-ix-label="Barbara video" data-id="2757409370001"></a></div>
-			</div>
-			<div class="cta">
-				<a class="ixtrack" target="_blank" data-ix-category="external" data-ix-label="Link to site" href="http://people.cathaypacific.com/people/en/home"><img src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/cta.png" alt="Meet the team now"></a>
-			</div>
-			<div class="logo"><img src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/logo.png" width="368" alt="" /></div>
-		</div>
-		<div class="video-container"></div>
-		<a class="close ixtrack" data-ix-category="media" data-ix-label="close video" >&#215;</a>
+<div id="qzad">
+	<div class="frames f1 noflicker" id="f1">
+		<div class="tagline"><img src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f1-tagline.png" alt="" width="390" class="noflicker" /></div>
+		<div class="logo"><img src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/logo.png" alt="Cathay Pacific logo" class="noflicker" /></div>
 	</div>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
-	<script id="ix-namer"
-		data-ix-name="Cathay Pacific Desktop"
-		src="http://ads.qz.com/js/qzad/qzad-1.0.js"
-		type="text/javascript">
-	</script>
-	<script src="http://app.qz.com/js/frameMessager/QZIX.js" type="text/javascript"></script>
-	<script src="http://app.qz.com/js/frameMessager/frameMessager.js" type="text/javascript"></script>
-	<script type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
-	<script type="text/javascript">
-		var ca = '', cb = '', cc = '', cd = '', ce = '', cf = '';
-		var currentVideo = '';
-		var times=[3000, 1500, 5000];
-		var currentFrame = 0;
-		var imgs = [];
-		var frames = [
-			function () {
-				cc = setTimeout(function() {
-					$('#f1').fadeOut(2000);
-				}, 750);
-			},
+	<div class="frames f2 hide noflicker" id="f2">
+		<div class="row upper"></div>
+		<div class="row bottom"></div>
+	</div>
+	<div class="frames f3 hide noflicker" id="f3"></div>
+	<div class="frames f4 hide noflicker" id="f4">
+		<div class="tagline">
+			<img src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f1-tagline.png" alt="People. The make an airline." width="392" class="noflicker" />
+		</div>
+		<div class="vid-container">
+			<div class="vid-large link noflicker"><a href="#" class="ixtrack noflicker"  data-ix-category="media" data-ix-label="Nigel video" data-id="2757409367001"></a></div>
+			<div class="vid-small link noflicker"><a href="#" class="ixtrack noflicker"  data-ix-category="media" data-ix-label="Nadia video" data-id="2757389883001"></a></div>
+			<div class="vid-small link noflicker"><a href="#"  class="ixtrack noflicker"  data-ix-category="media" data-ix-label="Barbara video" data-id="2757409370001"></a></div>
+		</div>
+		<div class="cta">
+			<a class="ixtrack" target="_blank" data-ix-category="external" data-ix-label="Link to site" href="http://people.cathaypacific.com/people/en/home">
+				<img src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/cta.png" alt="Meet the team now" class="noflicker">
+			</a>
+		</div>
+		<div class="logo">
+			<img src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/logo.png" width="368" alt="Cathay Pacific logo" class="noflicker" />
+		</div>
+	</div>
+	<div class="video-container"></div>
+	<a class="close ixtrack" data-ix-category="media" data-ix-label="close video" >&#215;</a>
+</div>
+<script src="http://app.qz.com/js/vendor/jQuery-min.js" type="text/javascript"></script>
+<script id="ix-namer"
+	data-ix-name="Cathay Pacific Desktop"
+	src="http://ads.qz.com/js/qzad/qzad-1.0.js"
+	type="text/javascript">
+</script>
+<script src="http://app.qz.com/js/frameMessager/QZIX.js" type="text/javascript"></script>
+<script src="http://app.qz.com/js/frameMessager/frameMessager.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+<script type="text/javascript">
+	var timeouts = [];
+	var currentVideo = '';
+	var times=[3000, 1500, 5000];
+	var currentFrame = 0;
+	var imgs = [];
+	var frames = [
+		function () {
+			$('#qzad').removeClass('preload');
 
-			//frame 2
-			function () {
-				
-				$('#f2').show();
-				$('#f2 .upper').append(addThumbs()[0]);
-				$('#f2 .bottom').append(addThumbs()[1]);
-				var d = 0, r =0;
-				var xpos;
-				$('.row div').each(function () {
-					var that = $(this);						
-					var upper = $(that).parent('.row').hasClass('upper');
+			timeouts[0] = setTimeout(function() {
+				$('#f1').fadeOut(2000);
+			}, 750);
+		},
 
-					if(upper){							
-					 	xpos = that.width() * d;						
-						that.delay(150 * d).animate({left: xpos}, 0,'ease-out');
-						d++;
-					}else{
-						xpos = that.width() * r;
-						that.delay(150 * r).animate({ right: xpos }, 0, 'ease-out');
-						r++;
-					}
-				});
-				$('#f3').show();
-			},
-
-			//frame 3
-			function () {	
-				cd = setTimeout(function() {
-					$('.r1-3').addClass('anim');
-
-					cb = setTimeout(function(){
-						$('.r1-3 .thumb').addClass('noflicker').attr('src','http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r1-thumb3-text.jpg');
-					}, 1000);
-				}, 1000);			
-			},
-
-			//frame 4
-			function () {
-				ce = setTimeout(function() {
-					$('.f3').fadeOut(1000);
-					$('.f2').fadeOut(900);
-					$('#f4').delay(50).fadeIn(1000);
-				}, 500);
-			}
-		];
-
-		function changeFrame () {
-			if($.isFunction(frames[currentFrame])) {
-				frames[currentFrame]();
-				cf = setTimeout(function(){
-					currentFrame++;
-					changeFrame();
-				}, times[currentFrame]);
-			}
-		};
-		// dynamically creates thumbnails for frame 2
-		function addThumbs () {
-			var string1 = '', string2 = '';
-
-			for (i = 1; i <= 3; i++) {
-				if(i<=3){
-					string1+= '<div class="r1-'+i+' left"><img class="thumb noflicker" src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r1-thumb'+i+'.jpg" /></div>';
-					string2+= '<div class="r2-'+i+' left"><img class="thumb noflicker" src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r2-thumb'+i+'.jpg" /></div>';
-				}else{
-					string1+= '<div class="r1-'+i+'"><img class="thumb noflicker" src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r1-thumb'+i+'.jpg" /></div>';
-					string2+= '<div class="r2-'+i+'"><img class="thumb noflicker" src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r2-thumb'+i+'.jpg" /></div>';
-				}
-			};
-			imgs[0] = string1;
-			imgs[1] = string2;
-			return imgs;
-		};
-		onTemplateLoad = function(experienceID){
+		//frame 2
+		function () {
 			
-			player = brightcove.api.getExperience(experienceID);
-	        APIModules = brightcove.api.modules.APIModules;
-		};
-		onTemplateReady = function(){
-		
-			videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
-			contentModule = player.getModule(APIModules.CONTENT);
-			videoPlayer.loadVideoByID(currentVideo);
-			videoPlayer.addEventListener(brightcove.api.events.MediaEvent.COMPLETE, mediaEventCompleteHandler);
+			$('#f2').show();
+			$('#f2 .upper').append(addThumbs()[0]);
+			$('#f2 .bottom').append(addThumbs()[1]);
+			var d = 0, r =0;
+			var xpos;
+			$('.row div').each(function () {
+				var that = $(this);						
+				var upper = $(that).parent('.row').hasClass('upper');
 
-			videoPlayer.getCurrentVideo(function(videoDTO) {
-				if(videoDTO) {
-					videoDTO.displayName = "";
-					contentModule.updateMedia(videoDTO, function(newVideoDTO) {
-						videoPlayer.play();
-					});
+				if(upper){							
+				 	xpos = that.width() * d;						
+					that.delay(150 * d).animate({left: xpos}, 0,'ease-out');
+					d++;
+				}else{
+					xpos = that.width() * r;
+					that.delay(150 * r).animate({ right: xpos }, 0, 'ease-out');
+					r++;
 				}
 			});
-		};
-		mediaEventCompleteHandler = function(){
-			$('.close').trigger('click');
-		};
-		removePlayer = function() {
-			/* Remove the BC video player object, hide the container */
-			$('#myExperience').remove();
-			$('.video-container').empty().hide();
-		};
-		addPlayer = function(vid){
-			return '<object id="myExperience" class="BrightcoveExperience">' +
-				'<param name="bgcolor" value="#FFFFFF" />' +
-				'<param name="width" value="" />' +
-				'<param name="height" value="" />' +
-				'<param name="playerID" value="2792921631001" />' +
-				'<param name="playerKey" value="AQ~~,AAABnwxttEE~,HpQpfOmVc2u55Gbu1MumtuYyF0UfUavi" />' +
-				'<param name="isVid" value="true" />' +
-				'<param name="isUI" value="true" />' +
-				'<param name="dynamicStreaming" value="true" />' +
-				'<param name="includeAPI" value="true" />' +
-				'<param name="templateLoadHandler" value="onTemplateLoad" />' +
-				'<param name="templateReadyHandler" value="onTemplateReady" />' +
-				'<param name="@videoPlayer" value="'+ vid +'" />' +
-			'</object>';
-		};
-		startAd = function() {
-			changeFrame();
-			$('.link a').on('click',function(e){
-				e.preventDefault();
-				$('.video-container').show();
+			$('#f3').show();
+		},
 
-				currentVideo = $(e.currentTarget).data('id');
-				$('.video-container').html(addPlayer(currentVideo));
-				brightcove.createExperiences();
+		//frame 3
+		function () {	
+			timeouts[1] = setTimeout(function() {
+				$('.r1-3').addClass('anim');
 
-				$('.close').show();
-				$('.close').off().on('click', function(e){
-					e.preventDefault();
-					$(this).toggle();
-					removePlayer();
+				timeouts[2] = setTimeout(function(){
+					$('.r1-3 .thumb').addClass('noflicker').attr('src','http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r1-thumb3-text.jpg');
+				}, 1000);
+			}, 1000);			
+		},
+
+		//frame 4
+		function () {
+			timeouts[3] = setTimeout(function() {
+				$('.f3').fadeOut(1000);
+				$('.f2').fadeOut(900);
+				$('#f4').delay(50).fadeIn(1000);
+			}, 500);
+		}
+	];
+
+	function changeFrame () {
+		if($.isFunction(frames[currentFrame])) {
+			frames[currentFrame]();
+			timeouts[4] = setTimeout(function(){
+				currentFrame++;
+				changeFrame();
+			}, times[currentFrame]);
+		}
+	};
+	// dynamically creates thumbnails for frame 2
+	function addThumbs () {
+		var string1 = '', string2 = '';
+
+		for (i = 1; i <= 3; i++) {
+			if(i<=3){
+				string1+= '<div class="r1-'+i+' left"><img class="thumb noflicker" src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r1-thumb'+i+'.jpg" /></div>';
+				string2+= '<div class="r2-'+i+' left"><img class="thumb noflicker" src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r2-thumb'+i+'.jpg" /></div>';
+			}else{
+				string1+= '<div class="r1-'+i+'"><img class="thumb noflicker" src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r1-thumb'+i+'.jpg" /></div>';
+				string2+= '<div class="r2-'+i+'"><img class="thumb noflicker" src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r2-thumb'+i+'.jpg" /></div>';
+			}
+		};
+		imgs[0] = string1;
+		imgs[1] = string2;
+		return imgs;
+	};
+	onTemplateLoad = function(experienceID){
+		
+		player = brightcove.api.getExperience(experienceID);
+        APIModules = brightcove.api.modules.APIModules;
+	};
+	onTemplateReady = function(){
+	
+		videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
+		contentModule = player.getModule(APIModules.CONTENT);
+		videoPlayer.loadVideoByID(currentVideo);
+		videoPlayer.addEventListener(brightcove.api.events.MediaEvent.COMPLETE, mediaEventCompleteHandler);
+
+		videoPlayer.getCurrentVideo(function(videoDTO) {
+			if(videoDTO) {
+				videoDTO.displayName = "";
+				contentModule.updateMedia(videoDTO, function(newVideoDTO) {
+					videoPlayer.play();
 				});
-			});
-		};
-		resetAd = function() {
-			currentFrame = 0;
-			clearTimeout(cb);
-			clearTimeout(cc);
-			clearTimeout(cd);
-			clearTimeout(ce);
-			clearTimeout(cf);
-			$('.frames').removeClass('off');
-			$('#f2 .upper, #f2 .bottom').empty();
-			$('#f2, #f3, #f4').hide();
-			$('.r1-3').removeClass('anim');
-			$('.f3 .copy').hide();
-			$('.r1-3 .thumb').attr('src','http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r1-thumb3.jpg');
-			$('#f1').show();
-		};
-		$(document).ready(function(){
-			QZAD.init({
-				el: document.getElementById( 'qzad' ),
-		        frameHeight: 480,
-		        App: { on: function() {startAd()}, off: function() {resetAd()}}
+			}
+		});
+	};
+	mediaEventCompleteHandler = function(){
+		$('.close').trigger('click');
+	};
+	removePlayer = function() {
+		/* Remove the BC video player object, hide the container */
+		$('#myExperience').remove();
+		$('.video-container').empty().hide();
+	};
+	addPlayer = function(vid){
+		return '<object id="myExperience" class="BrightcoveExperience">' +
+			'<param name="bgcolor" value="#FFFFFF" />' +
+			'<param name="width" value="" />' +
+			'<param name="height" value="" />' +
+			'<param name="playerID" value="2792921631001" />' +
+			'<param name="playerKey" value="AQ~~,AAABnwxttEE~,HpQpfOmVc2u55Gbu1MumtuYyF0UfUavi" />' +
+			'<param name="isVid" value="true" />' +
+			'<param name="isUI" value="true" />' +
+			'<param name="dynamicStreaming" value="true" />' +
+			'<param name="includeAPI" value="true" />' +
+			'<param name="templateLoadHandler" value="onTemplateLoad" />' +
+			'<param name="templateReadyHandler" value="onTemplateReady" />' +
+			'<param name="@videoPlayer" value="'+ vid +'" />' +
+		'</object>';
+	};
+	startAd = function() {
+		changeFrame();
+		$('.link a').on('click',function(e){
+			e.preventDefault();
+			$('.video-container').show();
+
+			currentVideo = $(e.currentTarget).data('id');
+			$('.video-container').html(addPlayer(currentVideo));
+			brightcove.createExperiences();
+
+			$('.close').show();
+			$('.close').off().on('click', function(e){
+				e.preventDefault();
+				$(this).toggle();
+				removePlayer();
 			});
 		});
-	</script>
+	};
+	resetAd = function() {
+		$('#qzad').addClass('preload');
+
+		currentFrame = 0;
+		
+		$.each(timeouts, function(i, to) {
+	    	clearTimeout(to);
+	    });
+
+		$('.frames').removeClass('off');
+		$('#f2 .upper, #f2 .bottom').empty();
+		$('#f2, #f3, #f4').hide();
+		$('.r1-3').removeClass('anim');
+		$('.f3 .copy').hide();
+		$('.r1-3 .thumb').attr('src','http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r1-thumb3.jpg');
+		$('#f1').show();
+	};
+	$(document).ready(function(){
+		QZAD.init({
+			el: document.getElementById( 'qzad' ),
+	        frameHeight: 480,
+	        App: { on: function() {startAd()}, off: function() {resetAd()}}
+		});
+	});
+</script>

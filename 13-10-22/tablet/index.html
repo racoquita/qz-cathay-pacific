@@ -2,28 +2,22 @@
 <html class="no-js">
 <head>
 	<title>Cathay Pacific Tablet</title>
-	<link rel="stylesheet" type="text/css" href="css/main-local.css">
-	<style type="text/css">
-		* {
-			margin: 0;
-			padding: 0;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-	<div id="qzad">
-		<div class="frames f1" id="f1">
-			<div class="tagline"><img src="img/f1-tagline.png" alt="" width="390" /></div>
-			<div class="logo"><img src="img/logo.png" alt="" /></div>
+	<div id="qzad" class="preload">
+		<div class="frames f1 noflicker" id="f1">
+			<div class="tagline"><img src="img/f1-tagline.png" alt="" width="390" class="nolicker"/></div>
+			<div class="logo"><img src="img/logo.png" alt="Cathay Pacific logo" class="nolicker"/></div>
 		</div>
-		<div class="frames f2 hide" id="f2">
+		<div class="frames f2 hide noflicker" id="f2">
 			<div class="row upper"></div>
 			<div class="row bottom"></div>
 		</div>
-		<div class="frames f3 hide" id="f3">
+		<div class="frames f3 hide noflicker" id="f3">
 		</div>
-		<div class="frames f4 hide" id="f4">
-			<div class="tagline"><img src="img/f1-tagline.png" alt="" width="392"/></div>
+		<div class="frames f4 hide noflicker" id="f4">
+			<div class="tagline"><img src="img/f1-tagline.png" alt="People. They make an airline." width="392" class="nolicker"/></div>
 			<div class="vid-container">
 				<div class="vid-large link"><a href="#" class="ixtrack"  data-ix-category="internal" data-ix-label="Nigel video" data-id="2757409367001"></a></div>
 				<div class="vid-small link"><a href="#" class="ixtrack"  data-ix-category="internal" data-ix-label="Nadia video" data-id="2757389883001"></a></div>
@@ -31,15 +25,15 @@
 			</div>
 			<div class="cta">
 				<a class="ixtrack" target="_blank" data-ix-category="external"  data-ix-label="Link to site" href="http://people.cathaypacific.com/people/en/home">
-					<img src="img/cta.png" alt="Meet the team now">
+					<img src="img/cta.png" alt="Meet the team now" class="nolicker">
 				</a>
 			</div>
-			<div class="logo"><img src="img/logo.png" width="368" alt="" /></div>
+			<div class="logo"><img src="img/logo.png" width="368" alt="Cathay Pacific logo" class="nolicker"/></div>
 		</div>
 		<div class="video-container"></div>
 		<a class="close ixtrack" data-ix-category="internal" data-ix-label="close video" >&#215;</a>
 	</div>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
 	<script id="ix-namer"
 		data-ix-name="Cathay Pacific Tablet"
 		src="http://ads.qz.com/js/qzad/qzad-1.0.js"
@@ -49,13 +43,16 @@
 	<script src="http://app.qz.com/js/frameMessager/frameMessager.js" type="text/javascript"></script>
 	<script type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
 	<script type="text/javascript">
+		var timeouts = [];
 		var currentVideo = '';
 		var times=[3000, 1500, 5000];
 		var currentFrame = 0;
 		var imgs = [];
 		var frames = [
 			function () {
-				setTimeout(function() {
+				$('#qzad').removeClass('preload');
+
+				timeouts[0] = setTimeout(function() {
 					$('#f1').fadeOut(2000);
 				}, 750);
 			},
@@ -86,10 +83,10 @@
 
 			//frame 3
 			function () {	
-				setTimeout(function() {
+				timeouts[1] = setTimeout(function() {
 					$('.r1-3').addClass('anim');
 
-					setTimeout(function(){
+					timeouts[2] = setTimeout(function(){
 						$('.r1-3 .thumb').attr('src','img/f2-r1-thumb3-text.jpg');
 					}, 1000);
 				}, 1000);			
@@ -97,10 +94,10 @@
 
 			//frame 4
 			function () {
-				setTimeout(function() {
+				timeouts[3] = setTimeout(function() {
 					$('.f3').fadeOut(1000);
 					$('.f2').fadeOut(900);
-					$('#f4').delay(50).fadeIn(1000);
+					$('#f4').fadeIn(1000);
 				}, 500);
 			}
 		];
@@ -108,7 +105,7 @@
 		function changeFrame () {
 			if($.isFunction(frames[currentFrame])) {
 				frames[currentFrame]();
-				setTimeout(function(){
+				timeouts[4] = setTimeout(function(){
 					currentFrame++;
 					changeFrame();
 				}, times[currentFrame]);
@@ -181,20 +178,43 @@
 				'<param name="@videoPlayer" value="'+ vid +'" />' +
 			'</object>';
 		};
-		$(document).ready(function(){
+		startAd = function() {
 			changeFrame();
 			$('.link a').on('click',function(e){
 				e.preventDefault();
 				$('.video-container').show();
+
 				currentVideo = $(e.currentTarget).data('id');
 				$('.video-container').html(addPlayer(currentVideo));
 				brightcove.createExperiences();
-				$('.close').show().off().on('click', function(e){
+
+				$('.close').show();
+				$('.close').off().on('click', function(e){
 					e.preventDefault();
-					$('.video-container').hide();
 					$(this).toggle();
+					removePlayer();
 				});
 			});
+		};
+		resetAd = function() {
+			$('#qzad').addClass('preload');
+
+			currentFrame = 0;
+			
+			$.each(timeouts, function(i, to) {
+		    	clearTimeout(to);
+		    });
+
+			$('.frames').removeClass('off');
+			$('#f2 .upper, #f2 .bottom').empty();
+			$('#f2, #f3, #f4').hide();
+			$('.r1-3').removeClass('anim');
+			$('.f3 .copy').hide();
+			$('.r1-3 .thumb').attr('src','http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r1-thumb3.jpg');
+			$('#f1').show();
+		};
+		$(document).ready(function(){
+			startAd();
 		});
 	</script>
 </body>
