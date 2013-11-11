@@ -2,15 +2,10 @@
 	margin: 0;
 	padding: 0;
 }
-img{
-	display: block;
-	width:100%;
-	border:none;
-}
 .noflicker {
 	-webkit-backface-visibility: hidden;
 	-webkit-perspective: 1000;
-	-webkit-transform: translateZ(0);
+	-webkit-transform: translate3d(0,0,0);
 }
 .preload * {
 	-webkit-transition: none !important;
@@ -19,55 +14,15 @@ img{
 	-o-transition: none !important;
 	transition: none !important;
 }
-@keyframes fade {
-  0% {opacity: 1;}
-  100% {opacity: 0;}
-}
-@-webkit-keyframes fade {
-  0%   { opacity: 1; }
-  100% { opacity: 0; }
-}
-@-moz-keyframes fade{
-  0%   { opacity: 1; }
-  100% { opacity: 0; }
-}
-@-o-keyframes fade {
-  0%   { opacity: 1; }
-  100% { opacity: 0; }
-}
-@keyframes fade {
-  0%   { opacity: 1; }
-  100% { opacity: 0; }
-}
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-   opacity: 1;
-  }
-}
-.hide {
-	display:none;
-}
-#qzad {
-	width:480px;
-	height:550px;
-	position:relative;
-	background:  url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f1-bg.jpg) 0 0 no-repeat;
-	a {
-		border:0;
-		text-decoration: none;
-	}
-}
 .video-container {
-  position: absolute;
-  top: 40px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  display: none;
+	position: absolute;
+	top: 40px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	display: none;
+	z-index: 401;
 }
 #myExperience {
 	width: 100%;
@@ -78,243 +33,257 @@ img{
 	font-size: 40px;
 	cursor: pointer;
 	position: absolute;
-	z-index: 102;
+	z-index: 402;
 	background-color: black;
-	color:white;
+	color: white;
 	text-align: right;
 	padding-right: 20px;
 	width: 460px;
 	height: 40px;
 	line-height: 40px;
-	top: -5px;
+	top: 0px;
 	right: 0;
 	display: none;
 }
-.frames{
-	position:absolute;
-	width:100%;
-	top:0;
-	bottom:0;
+#qzad {
+	width:480px;
 	height:550px;
-	&.hide{
-		display: none;
+	position:relative;
+	background:  url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f1-bg.jpg) 0 0 no-repeat;
+	a {
+		border:0;
+		text-decoration: none;
 	}
-	&.f1{
-		.tagline{
-			margin:230px auto 0 auto;
-			width:390px;	
-		}
-		.logo{
-			width:300px;
-			margin:228px auto 0 auto;
-		}
-	}
-	&.f2{
-		height:100%;
-		overflow: hidden;
-		.row{
-			position:relative;
-			left:0;
-			/* overflow: hidden; */
-			width:480px;
-			height:275px;
-			div{
-				position:absolute;
-				top:0;
-				width:160px;
-				height: 275px;
-				-webkit-transition: all .5s ease;
-				   -moz-transition: all .5s ease;
-				 	 -o-transition: all .5s ease;
-						transition: all .5s ease;
-				&.f2-r1-thumb3 {
-					img{
-						margin-left: -25px;
-						width: 480px;
-						height:550px;
-						margin-top: -5px;
-						opacity: 0;
-					}
-				}
-			}
-			.thumb{
-				display: block;
-				height:100%;
-			}
-			&.upper{
-				
-				div{
-					left:480px;
-				}
-				.r1-3 {
-					overflow: hidden;
-					
-					.thumb {
-						-webkit-transition: all 1s ease;
-					       -moz-transition: all 1s ease;
-						        transition: all 1s ease;
-						-webkit-transform-origin: 0% 0%;
-						   -moz-transform-origin: 0% 0%;
-						        transform-origin: 0% 0%;
-						-webkit-transform: scaleX(2) scaleY(1.3);
-						   -moz-transform: scaleX(2) scaleY(1.3);
-						        transform: scaleX(2) scaleY(1.3);
-					}
-					&.anim {
-						left: 0 !important;
-						-webkit-backface-visibility: hidden;
-						   -moz-backface-visibility: hidden;
-						
-						z-index: 101;
-						-webkit-transition: all 1s ease;
-					       -moz-transition: all 1s ease;
-					 	     -o-transition: all 1s ease;
-						        transition: all 1s ease;
+	.frames{
+		position:absolute;
+		width:100%;
+		top:0;
+		bottom:0;
+		height:550px;
+		opacity: 1;
 
-						.thumb {
-							-webkit-transition: all 1s ease;
-						       -moz-transition: all 1s ease;
-							        transition: all 1s ease;
-							-webkit-transform-origin: 0% 0%;
-							   -moz-transform-origin: 0% 0%;
-							        transform-origin: 0% 0%;
-							-webkit-transform: scaleX(3) scaleY(2);
-							   -moz-transform: scaleX(3) scaleY(2);
-							        transform: scaleX(3) scaleY(2);
+		&.f1 {
+			z-index: 301;
+
+			&.hide {
+				opacity: 0;
+				-webkit-transition: opacity 2s ease;
+				   -moz-transition: opacity 2s ease;
+				 	 -o-transition: opacity 2s ease;
+						transition: opacity 2s ease;
+			}
+			.tagline{
+				margin:230px auto 0 auto;
+				width:390px;
+				height: 28px;
+				background: url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f1-tagline.png) no-repeat center center;
+				background-size: 390px 28px;
+			}
+			.logo{
+				width:300px;
+				height: 40px;
+				margin:228px auto 0 auto;
+				background: url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/logo.png) no-repeat center center;
+				background-size: 300px 40px;
+			}
+		}
+		&.f2{
+			height:100%;
+			overflow: hidden;
+			display: none;
+			z-index: 201;
+
+			&.hide {
+				opacity: 0;
+				-webkit-transition: opacity 2s ease;
+				   -moz-transition: opacity 2s ease;
+				 	 -o-transition: opacity 2s ease;
+						transition: opacity 2s ease;
+			}
+			.row {
+				position:relative;
+				left:0;
+				width:480px;
+				height:275px;
+
+				&.upper {
+					div {
+						position:absolute;
+						top:0;
+						left: 480px;
+						width:160px;
+						height: 275px;
+						
+						-webkit-transition: all .5s ease;
+						   -moz-transition: all .5s ease;
+						 	 -o-transition: all .5s ease;
+								transition: all .5s ease;
+
+						&.r1-1 {
+							background: url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r1-thumb1.jpg) no-repeat center center;
+							background-size: cover;
+
+							&.show {
+								left: 0px;
+							}
+						}
+						&.r1-2 {
+							background: url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r1-thumb2.jpg) no-repeat center center;
+							background-size: cover;
+
+							&.show {
+								left: 160px;
+							}
+						}
+						&.r1-3 {
+							background: url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r1-thumb3.jpg) no-repeat center center;
+							background-size: cover;
+							background-position: 0px 0px;
+
+							&.show {
+								left: 320px;
+							}
+						}
+						&.nigel {
+							&.grow {
+								width: 480px;
+								height: 550px;
+								left: 0;
+								z-index: 201;
+
+								img {
+									right: 18px;
+									top: 36px;
+									position: absolute;
+								}
+							}
+						}
+					}
+				}
+				&.bottom {
+					div {
+						position:absolute;
+						top:0;
+						right: 480px;
+						width:160px;
+						height: 275px;
+						overflow: hidden;
+						-webkit-transition: all .5s ease;
+						   -moz-transition: all .5s ease;
+						 	 -o-transition: all .5s ease;
+								transition: all .5s ease;
+
+						&.r2-1 {
+							background: url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r2-thumb1.jpg) no-repeat center center;
+							background-size: cover;
+
+							&.show {
+								right: 0px;
+							}
+						}
+						&.r2-2 {
+							background: url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r2-thumb2.jpg) no-repeat center center;
+							background-size: cover;
+
+							&.show {
+								right: 160px;
+							}
+						}
+						&.r2-3 {
+							background: url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r2-thumb3.jpg) no-repeat center center;
+							background-size: cover;
+
+							&.show {
+								right: 320px;
+							}
 						}
 					}
 				}
 			}
-			&.bottom{
-				
-				div{
-					right:480px;
-				}
-			}
 		}
-		&.fade{
-			opacity: 0;
-			-webkit-animation: fade 0.3s forwards;
-				-moz-animation:fade 0.3s forwards;
-				  -o-animation:fade 0.3s forwards;
-					animation: fade 0.3s forwards;
-		}
-	}
-	&.f3{
-		opacity: 1;
-		div {
-		-webkit-transition: opacity .5s ease;
-	   	   -moz-transition: opacity .5s ease;
-	   	     -o-transition: opacity .5s ease;
-	   	   	    transition: opacity .5s ease;	
-		}
-
-		.photo{
-			position: absolute;
-			top:0;
-			right: 0;
-			left: 323px;
-			bottom:275px;
+		&.f3 {
+			height:100%;
 			overflow: hidden;
-			-webkit-transition: all 20s ease;
-			  -moz-transition: all 20s ease;
-			    -o-transition: all 20s ease;
-			      transition: all 20s ease;
-			img{
+			display: none;
+			z-index: 101;
+
+			&.hide {
 				opacity: 0;
-				height: 124%;
-				width: auto;
-				margin-left: -17px;
+				-webkit-transition: opacity 2s ease;
+				   -moz-transition: opacity 2s ease;
+				 	 -o-transition: opacity 2s ease;
+						transition: opacity 2s ease;
 			}
-			&.anim {
-				left:0;
-				bottom:0;
-				img{
+			.tagline{
+				position:inherit;
+				margin: 0 auto;
+				top: 25px;
+				width: 480px;
+				height: 28px;
+				background: url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f1-tagline.png) no-repeat center center;
+				background-size: 390px 28px;
+			}
+			.vid-container{
+				position:relative;
+				width: 370px;
+				height: 322px;
+				margin: 0 auto;
+				top:80px;
+				
+				a {
+					display: block;
+					width: 100%;
 					height: 100%;
-					margin-left: 0;
-					opacity: 1;
+					border:0;
 				}
 			}
-		}
-		&.fade{
-			opacity: 0;
-			-webkit-animation: fade 0.75s forwards;
-			   -moz-animation: fade 0.75s forwards;
-				  -o-animation:fade 0.75s forwards;
-				 	animation: fade 0.75s forwards;
-		}
-	}
-	&.f4{
-		position:relative;
-		opacity: 1;
-		&.fade-in{
-			opacity: 0;
-			 -webkit-animation: fade-in 0.85s ease;
-				-moz-animation: fade-in 0.85s ease;
-				  -o-animation: fade-in 0.85s ease;
-					 animation: fade-in 0.85s ease;
-		}
-		.tagline{
-			position:inherit;
-			margin: 0 auto;
-			top: 45px;
-			width: 392px;
-		}
-		.vid-container{
-			position:relative;
-			width: 370px;
-			height: 322px;
-			margin: 0 auto;
-			top:72px;
-			a{
-				display: block;
-				width: 100%;
-				height: 100%;
-				border:0;
-			}
-		}
-		.vid-large{
-			height: 206px;
-			width: 370px;
-			a{
-				background:  
-					url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-playSymbol.png) center center no-repeat, 
-					url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-thumb-video-large.jpg) 0 0 no-repeat;
-				background-origin: 50% 50%;
-			}
-		}
-		.vid-small{
-			position:absolute;
-			top:223px;
-			width: 170px;
-			height: 100px;
-
-			a{
-				background: 
-					url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-playSymbol-small.png) center center no-repeat, 
-					url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-thumb-video-small.jpg) 0 0 no-repeat;
-				background-origin: 50% 50%;
-			}
-			&:last-child{
-				left:195px;
-				a{
-					background: 
-						url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-playSymbol-small.png) center center no-repeat, 
-						url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-thumb-video-small-right.jpg) 0 0 no-repeat;
+			.vid-large{
+				height: 206px;
+				width: 370px;
+				
+				a {
+					background:  
+						url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-playSymbol.png) center center no-repeat, 
+						url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-thumb-video-large.jpg) 0 0 no-repeat;
 					background-origin: 50% 50%;
 				}
 			}
-		}
-		.logo{
-			position:inherit;
-			margin: 40px auto 0 auto;
-			width:300px;
-			bottom:18px;
-		}
-		.cta{
-			position:relative;
-			margin: 95px auto 0 auto;
-			width: 220px;
+			.vid-small{
+				position:absolute;
+				top:223px;
+				width: 170px;
+				height: 100px;
+
+				a{
+					background: 
+						url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-playSymbol-small.png) center center no-repeat, 
+						url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-thumb-video-small.jpg) 0 0 no-repeat;
+					background-origin: 50% 50%;
+				}
+				&:last-child{
+					left:195px;
+					a{
+						background: 
+							url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-playSymbol-small.png) center center no-repeat, 
+							url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-thumb-video-small-right.jpg) 0 0 no-repeat;
+						background-origin: 50% 50%;
+					}
+				}
+			}
+			.cta{
+				position:relative;
+				margin: 110px auto 0 auto;
+				width: 220px;
+			}
+			.logo{
+				position:inherit;
+				margin: 40px auto 0 auto;
+				width:100%;
+				height: 40px;
+				bottom:18px;
+				background: url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/logo.png) no-repeat center center;
+				background-size: 298px 40px;
+			}
 		}
 	}
 }

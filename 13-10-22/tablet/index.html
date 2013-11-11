@@ -6,29 +6,46 @@
 </head>
 <body>
 	<div id="qzad" class="preload">
-		<div class="frames f1 noflicker" id="f1">
-			<div class="tagline"><img src="img/f1-tagline.png" alt="" width="390" class="noflicker"/></div>
-			<div class="logo"><img src="img/logo.png" alt="Cathay Pacific logo" class="noflicker"/></div>
+		<div class="frames f1 noflicker">
+			<div class="tagline"></div>
+			<div class="logo"></div>
 		</div>
-		<div class="frames f2 hide noflicker" id="f2">
-			<div class="row upper"></div>
-			<div class="row bottom"></div>
+		<div class="frames f2 noflicker">
+			<div class="row upper">
+				<div class="r1-3 picture nigel"></div>
+				<div class="r1-2 picture"></div>
+				<div class="r1-1 picture"></div>
+			</div>
+			<div class="row bottom">
+				<div class="r2-3 picture"></div>
+				<div class="r2-2 picture"></div>
+				<div class="r2-1 picture"></div>
+			</div>
 		</div>
-		<div class="frames f3 hide noflicker" id="f3">
-		</div>
-		<div class="frames f4 hide noflicker" id="f4">
-			<div class="tagline"><img src="img/f1-tagline.png" alt="People. They make an airline." width="392" class="noflicker"/></div>
+		<div class="frames f3 noflicker">
+			<div class="tagline"></div>
 			<div class="vid-container">
-				<div class="vid-large link"><a href="#" class="ixtrack"  data-ix-category="internal" data-ix-label="Nigel video" data-id="2757409367001"></a></div>
-				<div class="vid-small link"><a href="#" class="ixtrack"  data-ix-category="internal" data-ix-label="Nadia video" data-id="2757389883001"></a></div>
-				<div class="vid-small link"><a href="#"  class="ixtrack"  data-ix-category="internal" data-ix-label="Barbara video" data-id="2757409370001"></a></div>
+				<div class="vid-large link">
+					<a href="#" class="ixtrack"  data-ix-category="internal" data-ix-label="Nigel video" data-id="2757409367001"></a>
+				</div>
+				<div class="vid-small link">
+					<a href="#" class="ixtrack"  data-ix-category="internal" data-ix-label="Nadia video" data-id="2757389883001"></a>
+				</div>
+				<div class="vid-small link">
+					<a href="#"  class="ixtrack"  data-ix-category="internal" data-ix-label="Barbara video" data-id="2757409370001"></a>
+				</div>
 			</div>
 			<div class="cta">
-				<a class="ixtrack" target="_blank" data-ix-category="external"  data-ix-label="Link to site" href="http://people.cathaypacific.com/people/en/home">
-					<img src="img/cta.png" alt="Meet the team now" class="noflicker">
+				<a 
+					class="ixtrack" 
+					target="_blank" 
+					data-ix-category="external"  
+					data-ix-label="Link to site" 
+					href="http://people.cathaypacific.com/people/en/home">
+						<img src="img/cta.png" alt="Meet the team now" class="noflicker">
 				</a>
 			</div>
-			<div class="logo"><img src="img/logo.png" width="368" alt="Cathay Pacific logo" class="noflicker"/></div>
+			<div class="logo"></div>
 		</div>
 		<div class="video-container"></div>
 		<a class="close ixtrack" data-ix-category="internal" data-ix-label="close video" >&#215;</a>
@@ -45,110 +62,53 @@
 	<script type="text/javascript">
 		var timeouts = [];
 		var currentVideo = '';
-		var times=[3000, 1500, 5000];
-		var currentFrame = 0;
-		var imgs = [];
-		var frames = [
-			function () {
+		var frames = function() {
+			this.frame1 = function() {
 				$('#qzad').removeClass('preload');
 
 				timeouts[0] = setTimeout(function() {
-					$('#f1').fadeOut(2000);
+					$('.f1').addClass('hide');
+					timeouts[1] = setTimeout(function(){
+						f.frame2();
+					}, 2000);
 				}, 750);
-			},
-
-			//frame 2
-			function () {
-				$('#f2').show();
-				$('#f2 .upper').append(addThumbs()[0]);
-				$('#f2 .bottom').append(addThumbs()[1]);
-				setTimeout(function(){
-					var d = 0, r =0;
-					var xpos;
-					$('.row div').each(function () {
-						var that = $(this);						
-						var upper = $(that).parent('.row').hasClass('upper');
-
-						if(upper){				
-						 	setTimeout(function(){
-						 		xpos = that.width() * d;	
-						 		that.css('left', xpos + 'px');
-						 		d++;
-						 	}, 150 * d);
-							
-						}else{
-							setTimeout(function(){
-						 		xpos = that.width() * r;
-						 		that.css('left', xpos +'px');
-						 		r++;
-						 	}, 150 * d);
-						}
-					});
-					$('#f3').show();
-				}, 500);
-					
-			},
-
-			//frame 3
-			function () {	
-				timeouts[1] = setTimeout(function() {
-					$('.r1-3').addClass('anim');
-					$('.r1-3').css({
-						'overflow':'visible',
-						'-webkit-transform':'translate(0px, 0px)',
-						'-moz-transform':'translate(0px, 0px)',
-						'transform':'translate(0px, 0px)'
-					});
-
-					timeouts[2] = setTimeout(function(){
-						var image = new Image();
-							image.src = 'img/f2-r1-thumb3-text.jpg';
-							image.onload = function() {
-								$('.r1-3 .thumb').addClass('noflicker');
-								$('.r1-3 .thumb').attr('src', image.src);
-							}
-					}, 1100);
-				}, 1000);			
-			},
-
-			//frame 4
-			function () {
-				timeouts[3] = setTimeout(function() {
-					$('.f3').fadeOut(1000);
-					$('.f2').fadeOut(900);
-					$('#f4').fadeIn(1000);
-				}, 500);
 			}
-		];
-
-		function changeFrame () {
-			if($.isFunction(frames[currentFrame])) {
-				frames[currentFrame]();
-				timeouts[4] = setTimeout(function(){
-					currentFrame++;
-					changeFrame();
-				}, times[currentFrame]);
+			this.frame2 = function() {
+				$('.f1').hide();
+				$('.f2').show();
+				
+				timeouts[2] = setTimeout(function(){
+					$('.picture').addClass('show');
+					timeouts[3] = setTimeout(function(){
+						$('.nigel').addClass('grow');
+						timeouts[4] = setTimeout(function(){
+							$('.nigel').append('<img src="img/quote.png"  width="263" />');
+							timeouts[5] = setTimeout(function(){
+								$('.picture:not(.nigel)').addClass('preload').css({'opacity':0});
+								$('.f2').addClass('hide');
+								f.frame3();
+							}, 3000);
+						}, 750);
+					}, 1500);
+				}, 250);
 			}
-		};
-		// dynamically creates thumbnails for frame 2
-		function addThumbs () {
-			var string1 = '', string2 = '';
-
-			for (i = 1; i <= 3; i++) {
-				if(i<=3){
-					string1+= '<div class="r1-'+i+' left"><img class="thumb noflicker" src="img/f2-r1-thumb'+i+'.jpg" /></div>';
-					string2+= '<div class="r2-'+i+' left"><img class="thumb noflicker" src="img/f2-r2-thumb'+i+'.jpg" /></div>';
-				}else{
-					string1+= '<div class="r1-'+i+'"><img class="thumb noflicker" src="img/f2-r1-thumb'+i+'.jpg" /></div>';
-					string2+= '<div class="r2-'+i+'"><img class="thumb noflicker" src="img/f2-r2-thumb'+i+'.jpg" /></div>';
-				}
-			};
-			imgs[0] = string1;
-			imgs[1] = string2;
-			return imgs;
+			this.frame3 = function() {
+				$('.f3').show();
+				timeouts[6] = setTimeout(function(){
+					$('.f2').hide();
+					addClicks();
+				}, 2000);
+			}
+			this.revert = function() {
+				$('#qzad').addClass('preload');
+				$('.f1').show().removeClass('hide');
+				$('.f2').removeClass('hide');
+				$('.f2, .f3').hide();
+				$('.picture').removeClass('show preload').css({'opacity':1});
+				$('.nigel').removeClass('grow').empty();
+			}
 		};
 		onTemplateLoad = function(experienceID){
-			
 			player = brightcove.api.getExperience(experienceID);
 	        APIModules = brightcove.api.modules.APIModules;
 		};
@@ -197,8 +157,7 @@
 				'<param name="@videoPlayer" value="'+ vid +'" />' +
 			'</object>';
 		};
-		startAd = function() {
-			changeFrame();
+		addClicks = function() {
 			$('.link a').on('click',function(e){
 				e.preventDefault();
 				$('.video-container').show();
@@ -214,24 +173,19 @@
 					removePlayer();
 				});
 			});
+		}
+		startAd = function() {
+			f.frame1();
 		};
 		resetAd = function() {
-			$('#qzad').addClass('preload');
-
-			currentFrame = 0;
-			
+			f.revert();
 			$.each(timeouts, function(i, to) {
 		    	clearTimeout(to);
 		    });
-
-			$('.frames').removeClass('off');
-			$('#f2 .upper, #f2 .bottom').empty();
-			$('#f2, #f3, #f4').hide();
-			$('.r1-3').removeClass('anim');
-			$('.f3 .copy').hide();
-			$('.r1-3 .thumb').attr('src','http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r1-thumb3.jpg');
-			$('#f1').show();
 		};
+
+		var f = new frames();
+
 		$(document).ready(function(){
 			startAd();
 		});
