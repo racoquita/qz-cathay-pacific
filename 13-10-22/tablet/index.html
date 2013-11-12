@@ -84,8 +84,7 @@
 						timeouts[4] = setTimeout(function(){
 							$('.nigel').append('<img src="img/quote.png"  width="263" />');
 							timeouts[5] = setTimeout(function(){
-								$('.picture:not(.nigel)').addClass('preload').css({'opacity':0});
-								$('.f2').addClass('hide');
+								$('.picture:not(.nigel)').addClass('preload').hide();
 								f.frame3();
 							}, 3000);
 						}, 750);
@@ -93,18 +92,19 @@
 				}, 250);
 			}
 			this.frame3 = function() {
-				$('.f3').show();
+				$('.f3').fadeIn(1000);
+				$('.f2').fadeOut(1000);
 				timeouts[6] = setTimeout(function(){
-					$('.f2').hide();
 					addClicks();
-				}, 2000);
+				}, 1000);
 			}
 			this.revert = function() {
 				$('#qzad').addClass('preload');
 				$('.f1').show().removeClass('hide');
-				$('.f2').removeClass('hide');
-				$('.f2, .f3').hide();
-				$('.picture').removeClass('show preload').css({'opacity':1});
+				$('.f2').show();
+				$('.f3').hide();
+				$('.f3').removeClass('show');
+				$('.picture').removeClass('show preload').show();
 				$('.nigel').removeClass('grow').empty();
 			}
 		};

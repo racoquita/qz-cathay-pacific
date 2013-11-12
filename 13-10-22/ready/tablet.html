@@ -1,16 +1,16 @@
 <style type="text/css">
-	*{margin:0;padding:0}.noflicker{-webkit-backface-visibility:hidden;-webkit-perspective:1000;-webkit-transform:translate3d(0,0,0)}.preload *{-webkit-transition:none!important;-moz-transition:none!important;-ms-transition:none!important;-o-transition:none!important;transition:none!important}
-	.video-container{position:absolute;top:40px;bottom:0;left:0;right:0;height:100%;display:none;z-index:401}#myExperience{width:100%;height:550px}.close{display:block;font-size:40px;cursor:pointer;position:absolute;z-index:402;background-color:black;color:white;text-align:right;padding-right:20px;width:460px;height:40px;line-height:40px;top:0;right:0;display:none}
+	*{margin:0;padding:0}.noflicker{-webkit-backface-visibility:hidden;-webkit-perspective:0;-webkit-transform:translate3d(0,0,0);-webkit-tap-highlight-color:rgba(0,0,0,0)}.preload *{-webkit-transition:none!important;-moz-transition:none!important;-ms-transition:none!important;-o-transition:none!important;transition:none!important}
+	.video-container{position:absolute;top:38px;bottom:0;left:0;right:0;height:100%;display:none;z-index:401}#myExperience{width:100%;height:550px}.close{display:block;font-size:40px;cursor:pointer;position:absolute;z-index:402;background-color:black;color:white;text-align:right;padding-right:20px;width:460px;height:40px;line-height:40px;top:0;right:0;display:none}
 	#qzad{width:480px;height:550px;position:relative;background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f1-bg.jpg) 0 0 no-repeat}#qzad a{border:0;text-decoration:none}#qzad .frames{position:absolute;width:100%;top:0;bottom:0;height:550px;opacity:1}
 	#qzad .frames.f1{z-index:301}#qzad .frames.f1.hide{opacity:0;-webkit-transition:opacity 2s ease;-moz-transition:opacity 2s ease;-o-transition:opacity 2s ease;transition:opacity 2s ease}#qzad .frames.f1 .tagline{margin:230px auto 0 auto;width:390px;height:28px;background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f1-tagline.png) no-repeat center center;background-size:390px 28px}
-	#qzad .frames.f1 .logo{width:300px;height:40px;margin:228px auto 0 auto;background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/logo.png) no-repeat center center;background-size:300px 40px}#qzad .frames.f2{height:100%;overflow:hidden;display:none;z-index:201}
-	#qzad .frames.f2.hide{opacity:0;-webkit-transition:opacity 2s ease;-moz-transition:opacity 2s ease;-o-transition:opacity 2s ease;transition:opacity 2s ease}#qzad .frames.f2 .row{position:relative;left:0;width:480px;height:275px}#qzad .frames.f2 .row.upper div{position:absolute;top:0;left:480px;width:160px;height:275px;-webkit-transition:all .5s ease;-moz-transition:all .5s ease;-o-transition:all .5s ease;transition:all .5s ease}
+	#qzad .frames.f1 .logo{width:300px;height:40px;margin:228px auto 0 auto;background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/logo.png) no-repeat center center;background-size:300px 40px}#qzad .frames.f2{position:absolute;height:100%;overflow:hidden;z-index:201}
+	#qzad .frames.f2 .row{position:relative;left:0;width:480px;height:275px}#qzad .frames.f2 .row.upper div{position:absolute;top:0;left:480px;width:160px;height:275px;-webkit-transition:all .5s ease;-moz-transition:all .5s ease;-o-transition:all .5s ease;transition:all .5s ease}
 	#qzad .frames.f2 .row.upper div.r1-1{background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r1-thumb1.jpg) no-repeat center center;background-size:cover}#qzad .frames.f2 .row.upper div.r1-1.show{left:0}#qzad .frames.f2 .row.upper div.r1-2{background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r1-thumb2.jpg) no-repeat center center;background-size:cover}
 	#qzad .frames.f2 .row.upper div.r1-2.show{left:160px}#qzad .frames.f2 .row.upper div.r1-3{background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r1-thumb3.jpg) no-repeat center center;background-size:cover;background-position:0 0}
 	#qzad .frames.f2 .row.upper div.r1-3.show{left:320px}#qzad .frames.f2 .row.upper div.nigel.grow{width:480px;height:550px;left:0;z-index:201}#qzad .frames.f2 .row.upper div.nigel.grow img{right:18px;top:36px;position:absolute}#qzad .frames.f2 .row.bottom div{position:absolute;top:0;right:480px;width:160px;height:275px;overflow:hidden;-webkit-transition:all .5s ease;-moz-transition:all .5s ease;-o-transition:all .5s ease;transition:all .5s ease}
 	#qzad .frames.f2 .row.bottom div.r2-1{background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r2-thumb1.jpg) no-repeat center center;background-size:cover}#qzad .frames.f2 .row.bottom div.r2-1.show{right:0}#qzad .frames.f2 .row.bottom div.r2-2{background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r2-thumb2.jpg) no-repeat center center;background-size:cover}
 	#qzad .frames.f2 .row.bottom div.r2-2.show{right:160px}#qzad .frames.f2 .row.bottom div.r2-3{background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f2-r2-thumb3.jpg) no-repeat center center;background-size:cover}#qzad .frames.f2 .row.bottom div.r2-3.show{right:320px}
-	#qzad .frames.f3{height:100%;overflow:hidden;display:none;z-index:101}#qzad .frames.f3.hide{opacity:0;-webkit-transition:opacity 2s ease;-moz-transition:opacity 2s ease;-o-transition:opacity 2s ease;transition:opacity 2s ease}#qzad .frames.f3 .tagline{position:inherit;margin:0 auto;top:25px;width:480px;height:28px;background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f1-tagline.png) no-repeat center center;background-size:390px 28px}
+	#qzad .frames.f3{height:100%;overflow:hidden;z-index:301;display:none}#qzad .frames.f3 .tagline{position:inherit;margin:0 auto;top:25px;width:480px;height:28px;background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f1-tagline.png) no-repeat center center;background-size:390px 28px}
 	#qzad .frames.f3 .vid-container{position:relative;width:370px;height:322px;margin:0 auto;top:80px}#qzad .frames.f3 .vid-container a{display:block;width:100%;height:100%;border:0}#qzad .frames.f3 .vid-large{height:206px;width:370px}#qzad .frames.f3 .vid-large a{background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-playSymbol.png) center center no-repeat,url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-thumb-video-large.jpg) 0 0 no-repeat;background-origin:50% 50%}
 	#qzad .frames.f3 .vid-small{position:absolute;top:223px;width:170px;height:100px}#qzad .frames.f3 .vid-small a{background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-playSymbol-small.png) center center no-repeat,url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-thumb-video-small.jpg) 0 0 no-repeat;background-origin:50% 50%}
 	#qzad .frames.f3 .vid-small:last-child{left:195px}#qzad .frames.f3 .vid-small:last-child a{background:url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-playSymbol-small.png) center center no-repeat,url(http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/f4-thumb-video-small-right.jpg) 0 0 no-repeat;background-origin:50% 50%}
@@ -79,7 +79,7 @@
 
 			timeouts[0] = setTimeout(function() {
 				$('.f1').addClass('hide');
-				timeouts[1] = setTimeout(function(){
+				timeouts[1] = setTimeout(function() {
 					f.frame2();
 				}, 2000);
 			}, 750);
@@ -95,7 +95,7 @@
 					timeouts[4] = setTimeout(function(){
 						$('.nigel').append('<img src="http://ads.qz.com/sponsors/cathay_pacific/13-10-22/tablet/img/quote.png"  width="263" />');
 						timeouts[5] = setTimeout(function(){
-							$('.picture:not(.nigel)').addClass('preload').css({'opacity':0});
+							$('.picture:not(.nigel)').addClass('preload').hide();
 							$('.f2').addClass('hide');
 							f.frame3();
 						}, 3000);
@@ -104,24 +104,31 @@
 			}, 250);
 		}
 		this.frame3 = function() {
-			$('.f3').show();
+			$('.f3').fadeIn(1000);
+			$('.f2').fadeOut(1000);
 			timeouts[6] = setTimeout(function(){
-				$('.f2').hide();
 				addClicks();
-			}, 2000);
+			}, 1000);
 		}
 		this.revert = function() {
 			$('#qzad').addClass('preload');
 			$('.f1').show().removeClass('hide');
-			$('.f2').removeClass('hide');
-			$('.f2, .f3').hide();
-			$('.picture').removeClass('show preload').css({'opacity':1});
+			$('.f2').show();
+			$('.f3').hide();
+			$('.f3').removeClass('show');
+			$('.picture').removeClass('show preload').show();
 			$('.nigel').removeClass('grow').empty();
 		}
 	};
 	onTemplateLoad = function(experienceID){
 		player = brightcove.api.getExperience(experienceID);
         APIModules = brightcove.api.modules.APIModules;
+
+        $('.close').show().off().on('click', function(e){
+			e.preventDefault();
+			removePlayer();
+			$(this).toggle();
+		});
 	};
 	onTemplateReady = function(){
 		videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
@@ -134,11 +141,6 @@
 				videoDTO.displayName = "";
 				contentModule.updateMedia(videoDTO, function(newVideoDTO) {
 					videoPlayer.play();
-					$('.close').show().off().on('click', function(e){
-						e.preventDefault();
-						removePlayer();
-						$(this).toggle();
-					});
 				});
 			}
 		});
@@ -167,20 +169,13 @@
 		'</object>';
 	};
 	addClicks = function() {
-		$('.link a').on('click',function(e){
+		$('.link a').off().on('click',function(e){
 			e.preventDefault();
 			$('.video-container').show();
 
 			currentVideo = $(e.currentTarget).data('id');
 			$('.video-container').html(addPlayer(currentVideo));
 			brightcove.createExperiences();
-
-			$('.close').show();
-			$('.close').off().on('click', function(e){
-				e.preventDefault();
-				$(this).toggle();
-				removePlayer();
-			});
 		});
 	}
 	startAd = function() {

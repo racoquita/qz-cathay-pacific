@@ -4,8 +4,9 @@
 }
 .noflicker {
 	-webkit-backface-visibility: hidden;
-	-webkit-perspective: 1000;
+	-webkit-perspective: 0;
 	-webkit-transform: translate3d(0,0,0);
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 .preload * {
 	-webkit-transition: none !important;
@@ -16,7 +17,7 @@
 }
 .video-container {
 	position: absolute;
-	top: 40px;
+	top: 38px;
 	bottom: 0;
 	left: 0;
 	right: 0;
@@ -88,18 +89,11 @@
 			}
 		}
 		&.f2{
+			position: absolute;
 			height:100%;
 			overflow: hidden;
-			display: none;
 			z-index: 201;
 
-			&.hide {
-				opacity: 0;
-				-webkit-transition: opacity 2s ease;
-				   -moz-transition: opacity 2s ease;
-				 	 -o-transition: opacity 2s ease;
-						transition: opacity 2s ease;
-			}
 			.row {
 				position:relative;
 				left:0;
@@ -204,16 +198,9 @@
 		&.f3 {
 			height:100%;
 			overflow: hidden;
+			z-index: 301;
 			display: none;
-			z-index: 101;
 
-			&.hide {
-				opacity: 0;
-				-webkit-transition: opacity 2s ease;
-				   -moz-transition: opacity 2s ease;
-				 	 -o-transition: opacity 2s ease;
-						transition: opacity 2s ease;
-			}
 			.tagline{
 				position:inherit;
 				margin: 0 auto;
